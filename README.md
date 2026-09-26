@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/hero-banner.svg" alt="vibe-frontend-design - The Anti-Slop Design Engineering Skill" width="100%" />
+  <img src="assets/hero-banner.svg" alt="vibe-frontend-design" width="100%" />
 </p>
 
 <div align="center">
@@ -13,74 +13,55 @@
 
 <br />
 
-[ English Documentation ](#english-documentation) &nbsp;|&nbsp; [ 简体中文文档 ](#chinese-documentation)
+[ English ](README.md) &nbsp;|&nbsp; [ 简体中文 ](README.zh-CN.md)
 
 </div>
 
 ---
 
-<a name="chinese"></a>
-## 简体中文文档 (Chinese)
+## Stop Accepting AI Slop in Your Frontends (Anti-Slop Manifesto)
 
-### 为什么需要这个 Skill？
+When left unguided, modern LLMs (Claude, GPT, DeepSeek) default to the same tired visual clichés:
+- Predictable pitch-black canvases dominated by oversaturated purple and pink glowing mesh blobs.
+- Symmetrical, equal-sized 3-column feature cards with zero information hierarchy.
+- Loose, unadjusted headline tracking and text wrapping that breaks awkwardly.
+- Static buttons that lack physical press feedback, while every element fades in simultaneously at the exact same mechanical speed.
+- Collapsing accordions and tabs that trigger severe layout shifts (CLS) and dropped frames.
 
-在用 AI（Claude Code、Cursor、Windsurf、Codex）写前端时，开发者每天都在忍受以下**“AI 垃圾模板味（AI Slop）”**：
-1. **千篇一律的模板审美**：默认的紫色/粉色放射渐变大球、无脑三等分对称卡片、未调整字距的松垮大标题；
-2. **只会说模糊形容词**：向 AI 提需求只会输入“帮我做一个高级、有质感、像苹果那样的界面”，AI 只能全凭盲猜；
-3. **动效生硬假滑**：所有元素同节奏同时淡入、缺少物理阻尼、点击无按压反馈、折叠菜单生硬跳变；
-4. **中文字体排版灾难**：中西文紧贴挤压、标点符号掉落行首、在现代深色界面中排版松散发虚。
+**This is not premium design. It is the lowest common denominator of unopinionated code generation.**
 
-**`vibe-frontend-design` 是全网首个融合 X 爆款博主 Adrian Punk（[@AdrianPunk115](https://x.com/AdrianPunk115)）全套视觉与动效词典、GitHub 20 万星顶流前端工程生态（shadcn/ui, Magic UI, Aceternity, react-bits），以及中西文排版美学的模块化 Agent 技能库。**
+`vibe-frontend-design` is an opinionated **Design Engineering Skill** built for modern AI coding agents (Claude Code, Cursor, Windsurf, Codex). It converts abstract aesthetic taste into deterministic, mathematically grounded frontend assets: **modular typography scales, 4-tier surface hierarchies, double-layer spring physics, asymmetric Bento Grids, zero-CLS layout primitives, and 12 production-grade code recipes.**
 
 ---
 
-### 视觉与工程对比：普通 AI 生成 vs. 注入本技能
-
-| 维度 | 普通 AI 默认生成 (Generic AI Slop) | **注入 vibe-frontend-design (The Craft)** |
-|---|---|---|
-| **页面布局** | 单调死板的三等分对称卡片（3-Column Cards） | **错落自适应 Bento Grid（便当盒网格）**，主卡 `col-span-2 row-span-2` |
-| **色彩光影** | 纯黑底配刺眼紫色渐变大光斑（Purple Blobs） | **表面四层体系**（Canvas -> Surface -> Overlay），1px 细发光边框，局部光斑跟随 |
-| **动效物理** | 所有卡片以相同速度同时淡入，机械无脑 | **交错级联上浮（Stagger 50ms）**，物理弹簧阻尼（`stiffness: 180, damping: 14`） |
-| **交互手感** | 按钮点击无任何物理反馈，悬停无张力 | **双层视差磁吸按钮（Magnetic Button）**，点击 `active:scale-[0.98]` |
-| **中文字体** | 默认行高拥挤，大标题字间距散漫，标点掉行首 | **1.25 中文字阶黄金律**，大标题负字距（`-0.02em`），中西文盘古之白，标点避头尾 |
-| **加载性能** | 全屏突兀白屏，数据返回瞬间布局剧烈抖动 | **1:1 轮廓高光波纹骨架屏（Shimmer）**，纯 CSS 高度自适应手风琴，**CLS = 0** |
+## The Contrast: Generic AI Slop vs. Design Engineering Craft
 
 <p align="center">
   <img src="assets/before-after.svg" alt="Before vs After Visual Comparison" width="100%" />
 </p>
 
+| Dimension | Generic AI Generation (The Slop) | vibe-frontend-design (The Craft) |
+|---|---|---|
+| **Layout** | Symmetrical 3-column equal cards with no visual focal point | **Asymmetric Bento Grid**, with a 2x2 Hero Anchor Tile and offset metric cards |
+| **Surfaces & Color** | Harsh pitch-black with oversaturated glowing purple blobs | **4-Level Surface Hierarchy** (Level 0 Canvas -> Level 3 Overlay), 1px hairline border, cursor spotlight |
+| **Motion Physics** | All cards fade in simultaneously with linear, mechanical easing | **50ms Stagger Cascade**, physical spring damping (`stiffness: 180, damping: 14`) |
+| **Tactile Feedback** | Static buttons with zero press feedback | **Double-Layer Magnetic Button**, tactile press feedback `active:scale-[0.98]` |
+| **Typography** | Default line-height, loose tracking, awkward line breaks | **Modular Scale 1.25**, tight headline tracking (`-0.02em`), 65ch measure limit |
+| **Perceived Perf** | Blank loading states, jarring content jumps | **1:1 Shimmer Skeleton Screen**, pure CSS zero-reflow accordion, **CLS = 0** |
+
 ---
 
-### 零安装真实交互效果演示 (Live Interactive Demo)
+## Live Interactive Demo (Zero Dependencies)
 
-本项目自带**无需任何构建环境、开箱即用的真实交互演示页面**（`demo/index.html`）：
-- **如何打开**：直接双击 `demo/index.html`（或在终端运行 `open demo/index.html` / `start demo/index.html`），在任何现代浏览器中即可零距离体验：
-  -  **双层磁吸按钮**：光标靠近产生引力拉扯，文字额外视差位移，移出自然弹簧震荡回弹；
-  -  **动态光标聚光灯卡片**：径向渐变微光紧跟鼠标像素坐标流动，激活 1px 细线边框；
-  -  **真 3D 透视分层卡片**：随鼠标角度产生真实立体空间倾斜，内部文字按钮 Z 轴悬浮浮出；
-  -  **赛博字符解密动画**：鼠标悬停触发黑客终端级字符翻滚解密；
-  -  **纯 CSS 零重排手风琴**：点击瞬间 60fps 丝滑展开，解决传统测量 scrollHeight 引起的重排掉帧；
-  -  **高光波纹骨架屏**：1:1 复刻最终轮廓，实现 CLS = 0。
-
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│                   布局结构对比图示 (Visual Layout Comparison)           │
-├────────────────────────────────────────────────────────────────────────┤
-│ 普通 AI 的无脑对称模板 (The Slop):                                     │
-│ ┌───────────┬───────────┬───────────┐                                  │
-│ │ Card 1    │ Card 2    │ Card 3    │ (千篇一律，毫无视觉主次与层次)   │
-│ └───────────┴───────────┴───────────┘                                  │
-│                                                                        │
-│ 本技能驱动的 Bento Grid 黄金布局 (The Craft):                          │
-│ ┌───────────────────────────────────┬───────────┐                      │
-│ │                                   │ Stat 01   │                      │
-│ │         HERO ANCHOR TILE          ├───────────┤                      │
-│ │         (主角大卡 2x2)            │ Stat 02   │                      │
-│ │         核心可视化拓扑流图        ├───────────┴────────────────────┐ │
-│ │                                   │ Wide Feature Card              │ │
-│ └───────────────────────────────────┴────────────────────────────────┘ │
-└────────────────────────────────────────────────────────────────────────┘
-```
+This repository includes a standalone interactive showcase page (`demo/index.html`):
+- **How to run**: Simply double-click `demo/index.html` or execute `open demo/index.html` in your terminal.
+- **Interactive features ready to test**:
+  - **Double-Layer Magnetic Button**: Cursor attraction with differential parallax between button body and inner text, settling via physical spring oscillation.
+  - **Dynamic Cursor Spotlight**: Real-time radial gradient tracking mouse coordinates across 1px borders.
+  - **3D Perspective Tilt Card**: True spatial tilt along the X/Y axes with Z-axis elevation (`translateZ`).
+  - **Decrypted / Scramble Text**: Cyberpunk-style glyph rolling and progressive left-to-right character resolving.
+  - **Pure CSS Zero-Layout-Thrashing Accordion**: Smooth 60fps grid height expansion without JavaScript `scrollHeight` reflows.
+  - **Shimmer Skeleton Screen**: 1:1 blueprint outline with zero Cumulative Layout Shift (CLS = 0).
 
 <p align="center">
   <img src="assets/bento-showcase.svg" alt="Bento Grid Animated Showcase" width="100%" />
@@ -88,285 +69,119 @@
 
 ---
 
-### 模块化知识库全景 (超过 120 KB 纯干货)
+## Core Systems & Architecture
 
-遵循 Anthropic 官方 Skill 规范的**渐进式披露（Progressive Disclosure）**原则，分为主蓝图与 7 本专项参考专著：
+### 1. The Three Dials Configuration
+Before generating code, the agent infers and locks three baseline parameters:
+- **`DESIGN_VARIANCE` (1 - 10)**: 1 = Conservative Symmetry -> 10 = Asymmetric Experimental Art
+- **`MOTION_INTENSITY` (1 - 10)**: 1 = Clean Static -> 10 = Cinematic Spring Physics & Differential Parallax
+- **`VISUAL_DENSITY` (1 - 10)**: 1 = Gallery Negative Space -> 10 = Dense Mission-Critical Dashboard
 
-```
-vibe-frontend-design/
-├── SKILL.md                          # 主蓝图：Design Read、三档旋钮系统、Anti-Slop 十大禁令、12 维自检清单
-└── references/
-    ├── visual-dictionary.md          # 视觉全书：Bento Grid、Split-screen、5 大现代风格、设计令牌
-    ├── motion-dictionary.md          # 动效全书：四层动效法则、多层视差 0.3x/1.0x/1.4x、弹簧回弹
-    ├── code-recipes.md               # 12 套生产级源码：磁吸按钮、聚光灯卡片、3D 悬停卡、CSS 手风琴
-    ├── prompt-cookbook.md            # 提示词任务书：八字段任务书架构、SaaS 官网、作品集完整 Prompt
-    ├── chinese-typography.md         # 中文字体排版指南：1.25 中文字阶、盘古之白、大标题紧凑负字距
-    ├── archive-aesthetic.md          # 档案美学体系：Knolling 正交网格、漫反射柔光、标本元件化
-    ├── design-engineering-qa.md      # 设计工程排错手册：z-index 层叠矩阵、CLS=0 布局防抖、GPU 加速
-    └── github-highstar-ecosystem.md  # 20 万星顶流深度解密：shadcn, Magic UI, Aceternity, cmdk, sonner
-```
+### 2. The 8-Field Spec Prompt Architecture
+Upgrades conversational prompting into a structured engineering specification:
+`Role (Composite Specialist) -> Goal (Single Primary Conversion) -> Audience (Context & Device) -> Pages (Block Inventory) -> IA (F-Pattern Flow) -> Design System (Tokens & Modular Scale) -> States (Full State Machine) -> Acceptance (Zero-Overflow Criteria)`
 
----
-
-### 核心代码配方示例 (Code Showcase)
-
-#### 1. 生产级磁吸按钮（双层视差 + 物理弹簧 + 触屏降级）
-> 鼠标在按钮周边 1.5 倍感应区内时，按钮与文字产生双层流体视差位移，移出后弹簧回弹：
-
-```tsx
-import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
-
-export function MagneticButton({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const [pos, setPos] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (window.matchMedia("(pointer: coarse)").matches) return; // 触屏安全降级
-    if (!buttonRef.current) return;
-    const { clientX, clientY } = e;
-    const { left, top, width, height } = buttonRef.current.getBoundingClientRect();
-    // 0.35 整体阻尼牵引
-    setPos({ x: (clientX - (left + width / 2)) * 0.35, y: (clientY - (top + height / 2)) * 0.35 });
-  };
-
-  return (
-    <motion.button
-      ref={buttonRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={() => setPos({ x: 0, y: 0 })}
-      animate={{ x: pos.x, y: pos.y }}
-      transition={{ type: "spring", stiffness: 180, damping: 14, mass: 0.1 }}
-      className={`relative inline-flex items-center justify-center rounded-xl px-6 py-3 select-none active:scale-[0.98] ${className}`}
-    >
-      <motion.span
-        animate={{ x: pos.x * 0.5, y: pos.y * 0.5 }} // 内部文字额外视差位移
-        transition={{ type: "spring", stiffness: 220, damping: 16 }}
-        className="inline-flex items-center gap-2 pointer-events-none"
-      >
-        {children}
-      </motion.span>
-    </motion.button>
-  );
-}
-```
+### 3. Production Code Recipes (`references/code-recipes.md`)
+Includes 12 battle-tested component implementations built with React, Tailwind CSS, and Framer Motion:
+- Double-layer Magnetic Button with touchscreen fallback;
+- Dynamic Spotlight Card with relative coordinate injection;
+- True 3D Perspective Tilt Card;
+- Pure CSS Grid Auto-height Accordion;
+- Magic UI Border Beam Card;
+- Scramble Decrypted Text;
+- Masked Film Grain Noise Background.
 
 <p align="center">
   <img src="assets/magnetic-spring.svg" alt="Magnetic Button Physics Simulation" width="100%" />
 </p>
 
-#### 2. 纯 CSS 零重排高度自适应手风琴 (Zero Layout Thrashing Accordion)
-> 彻底告别 JS 测量 `scrollHeight` 导致的页面重排掉帧，基于现代 CSS Grid 实现 60fps 丝滑展开：
+### 4. Global & CJK Typography Standards
+- Modular scale 1.25 with tight headline tracking (`-0.02em` to `-0.025em`) to prevent visual scatter;
+- Pangu spacing (`0.25em`) between East Asian characters and Latin/numeric glyphs;
+- Strict line-breaking rules (`text-wrap: pretty; line-break: strict`) to prevent orphan characters;
+- Integrated Kimi Archive aesthetic: orthogonal knolling grids, diffuse softbox lighting, and technical specimen stamp details.
 
-```css
-.accordion-content {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 250ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-.accordion-item[data-open="true"] .accordion-content {
-  grid-template-rows: 1fr;
-}
-.accordion-inner {
-  overflow: hidden;
-}
+---
+
+## Modular Knowledge Base Index (Over 120 KB)
+
+Adheres to Anthropic's **Progressive Disclosure** specification, separating the master blueprint from 7 specialized reference manuals:
+
 ```
-
-#### 3. 动态光标聚光灯卡片 (Dynamic Spotlight Card)
-> 鼠标划过卡片时，局部径向微发光沿着光标流动，赋予 1px 细线边框以呼吸感：
-
-```tsx
-import React, { useRef } from "react";
-
-export function SpotlightCard({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  const cardRef = useRef<HTMLDivElement>(null);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    cardRef.current.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
-    cardRef.current.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
-  };
-
-  return (
-    <div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      className={`group relative rounded-2xl bg-zinc-900/60 p-6 border border-white/10 overflow-hidden ${className}`}
-    >
-      <div
-        className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={{
-          background: "radial-gradient(450px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(255, 255, 255, 0.08), transparent 80%)",
-        }}
-      />
-      <div className="relative z-10">{children}</div>
-    </div>
-  );
-}
+vibe-frontend-design/
+├── SKILL.md                          # Master Blueprint: Design Read, Three Dials, Anti-Slop Prohibitions, 12-Point QA Matrix
+├── LICENSE                           # MIT License
+├── README.md                         # English Documentation
+├── README.zh-CN.md                   # 简体中文文档
+├── demo/
+│   └── index.html                    # Live Interactive Showcase (Zero Dependencies)
+└── references/
+    ├── visual-dictionary.md          # Visual Encyclopedia: Bento Grid, Split-Screen, 5 Aesthetic Styles, Surface Tokens
+    ├── motion-dictionary.md          # Motion Encyclopedia: 4-Layer Motion Framework, Parallax 0.3x/1.0x/1.4x, Springs
+    ├── code-recipes.md               # 12 Production React + Tailwind Code Implementations
+    ├── prompt-cookbook.md            # The 8-Field Mini-Spec Prompt Architecture & Templates
+    ├── chinese-typography.md         # CJK Typography Standards: Modular Scales, Pangu Spacing, Negative Tracking
+    ├── archive-aesthetic.md          # Archive Aesthetic & Knolling System: Orthogonal Grids, Diffuse Softbox Lighting
+    ├── design-engineering-qa.md      # Design Engineering QA: Stacking Context Matrix, Zero-CLS Architecture
+    └── github-highstar-ecosystem.md  # 200k+ Stars Ecosystem: Architecture of shadcn/ui, Magic UI, Aceternity, cmdk
 ```
 
 ---
 
-###  八字段任务书实战范式 (Prompt Specification in Action)
+## Installation & Quickstart
 
-当你让 AI 编写一个落地页时，不要只说“写个好看的网页”，而是套用本 Skill 独家的**八字段任务书框架**：
-
-```markdown
-# 1. 角色 (Role): 兼任资深信息架构师与高阶前端设计工程师。
-# 2. 目标 (Goal): 为分布式 AI 监控平台构建高转化官网首屏，核心转化为点击“开始免费接入”。
-# 3. 受众 (Audience): 追求高信噪比的全栈工程师与架构师，桌面宽屏查阅为主。
-# 4. 页面 (Pages): 单页 Landing Page (Hero -> Social Proof 跑马灯 -> Bento Features -> Pricing -> FAQ)。
-# 5. 架构 (IA): F 型视觉动线，左侧痛点价值阐述，右侧交互式终端运行 Canvas。
-# 6. 视觉 (Design System): Linear 暗调科技风 (底色 #08090C，表面 #111218，1px 发光边框)，字阶 1.25，紧凑负字距。
-# 7. 交互 (Interactions): 主按钮磁吸回弹，Bento 卡片聚光灯跟随，FAQ 手风琴 CSS Grid 展开。
-# 8. 验收 (Acceptance): 390px 移动端零横向溢出，键盘聚焦高亮轮廓，适配 prefers-reduced-motion。
-```
-
-**AI 接收后将自动执行**：
-1. 输出一行 **`Design Read`** 与 **`Three Dials`** 进行基调锁定；
-2. 自动屏蔽 AI 紫色光斑等模板套话；
-3. 从 `references/code-recipes.md` 提取经过数学验证的组件源码并高质量交付。
-
----
-
-###  极速安装与使用指南
-
-#### 1. 在 Claude Code 中全局使用（推荐）
+### Method 1: Global Installation in Claude Code (Recommended)
+Clone into your global user skills directory to make it immediately available across all local projects:
 ```bash
 mkdir -p ~/.claude/skills
 git clone https://github.com/shinewinsu/vibe-frontend-design.git ~/.claude/skills/vibe-frontend-design
 ```
 
-#### 2. 在具体前端项目中单仓生效
+### Method 2: Per-Project Installation
+Install directly inside a specific frontend repository:
 ```bash
 mkdir -p .claude/skills
 git clone https://github.com/shinewinsu/vibe-frontend-design.git .claude/skills/vibe-frontend-design
 ```
 
-#### 3. 在终端中随时调用
-在 Claude Code 终端中输入：
+### Method 3: Cursor / Windsurf / Codex Integration
+Place `SKILL.md` inside your `.cursorrules` or reference it explicitly in your prompt:
+> "Strictly follow the `vibe-frontend-design` specification and 8-field spec architecture to design a modern B2B SaaS landing page hero."
+
+---
+
+## Terminal Usage
+
+In Claude Code, invoke the skill directly:
 ```bash
 /vibe-frontend-design
 ```
-或直接在 Prompt 中要求：
-> “**调用 vibe-frontend-design 技能**，参考 `prompt-cookbook.md` 中的任务书框架，为我设计一个 [AI 开发者落地页首屏]。”
+Or trigger it through natural language:
+> "Invoke the vibe-frontend-design skill. Use the 8-field spec architecture from `prompt-cookbook.md` to design a Linear-style dark dashboard for distributed AI monitoring."
+
+**The Agent will automatically**:
+1. Output a one-line **`Design Read`** and lock **`The Three Dials`**;
+2. Enforce Anti-Slop constraints, eliminating default purple blobs and generic card grids;
+3. Apply modular typography with tight tracking and 65ch measure limits;
+4. Supply battle-tested, production-ready code directly from `code-recipes.md`.
 
 ---
 
-<a name="english"></a>
-## English Documentation
+## Credits & Prior Art
 
-### What is vibe-frontend-design?
+This project is deeply inspired by pioneering design engineers and open-source creators:
 
-When building web frontends with AI coding assistants (Claude Code, Cursor, Windsurf, Codex), developers constantly struggle with **"AI Slop"**:
-- Identical generic aesthetics (pitch-black backgrounds with purple/magenta glowing mesh blobs).
-- Predictable 3-column symmetrical feature grids.
-- Lack of tactile physical feedback (missing button active states, rigid modal transitions).
-- Disorganized typography without optical tracking or hierarchy.
-
-**`vibe-frontend-design` is a comprehensive, production-grade Design Engineering Skill.**  
-It fuses Adrian Punk's acclaimed visual and motion dictionaries, GitHub's top-tier open-source design systems (shadcn/ui, Magic UI, Aceternity UI, react-bits), and tactile micro-interaction physics into an executable, modular knowledge base.
-
----
-
-### The Three Dials Configuration
-Before generating any code, the agent infers and locks three baseline dials:
-- **`DESIGN_VARIANCE` (1 - 10)**: 1 = Strict Symmetry -> 10 = Asymmetric / Expressive Artwork
-- **`MOTION_INTENSITY` (1 - 10)**: 1 = Clean Static -> 10 = Cinematic Physics & Multi-layer Parallax
-- **`VISUAL_DENSITY` (1 - 10)**: 1 = Airy Gallery Spacing -> 10 = Mission-Critical Dashboard
+- **Special Recognition: [Adrian Punk (@AdrianPunk115)](https://x.com/AdrianPunk115)**  
+  The visual and motion dictionaries, 8-field spec prompt architecture, and archive aesthetic standards are deeply grounded in Adrian Punk's viral series on X.
+- **[Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill)**: For pioneering the Anti-Slop philosophy, Design Read, and The Three Dials system.
+- **[shadcn/ui](https://github.com/shadcn-ui/ui)** & **[Radix UI](https://github.com/radix-ui/primitives)**: The standard for accessible, unstyled UI primitives.
+- **[magicuidesign/magicui](https://github.com/magicuidesign/magicui)** & **[aceternity/ui](https://github.com/aceternity/ui)**: For modern animated marketing components and 3D visual spectacle.
+- **[DavidHDev/react-bits](https://github.com/DavidHDev/react-bits)**: Creative interactive animation patterns and decrypted text effects.
+- **[Emil Kowalski](https://emilkowal.ski/)** ([animations.dev](https://animations.dev/), [sonner](https://github.com/emilkowalski/sonner), [vaul](https://github.com/emilkowalski/vaul)) & **[Paco Coursey](https://paco.me/)** ([cmdk](https://github.com/pacocoursey/cmdk)): For defining the craft of interaction design and tactile desktop-grade web software.
+- **[ibelick](https://github.com/ibelick)**: For background snippet craftsmanship and noise overlay textures.
 
 ---
 
-### Live Interactive Demo (Zero-Dependency)
+## License
 
-The repository includes a standalone interactive showcase page (`demo/index.html`):
-- **How to run**: Simply double-click `demo/index.html` or run `open demo/index.html` in your terminal to interact with all the physical effects in real time:
-  -  **Double-Layer Magnetic Button**: Real spring physics pulling both the button and inner text with differential parallax.
-  -  **Dynamic Cursor Spotlight**: Real-time radial gradient tracking mouse coordinates.
-  -  **3D Perspective Tilt Card**: True 3D elevation along the Z-axis (`translateZ`).
-  -  **Decrypted / Scramble Text**: Cyberpunk character rolling on hover.
-  -  **Pure CSS Zero-Layout-Thrashing Accordion**: 60fps smooth grid expansion without JS `scrollHeight` reflows.
-  -  **Shimmer Skeleton Screen**: 1:1 blueprint outline with zero CLS.
-
-<p align="center">
-  <img src="assets/bento-showcase.svg" alt="Bento Grid Showcase" width="100%" />
-</p>
-
----
-
-### Modular Knowledge Base Index
-
-- [`SKILL.md`](SKILL.md) — The Master Execution Blueprint: Design Read, Three Dials, Anti-Slop 10 Prohibitions, 12-point QA matrix.
-- [`references/visual-dictionary.md`](references/visual-dictionary.md) — Bento Grid rules, Split-screen patterns, 5 modern aesthetic systems, surface level tokens.
-- [`references/motion-dictionary.md`](references/motion-dictionary.md) — 4-layer motion framework, stagger intervals (50ms), parallax differential rates (0.3x/1.0x/1.4x), FLIP reordering.
-- [`references/code-recipes.md`](references/code-recipes.md) — 12 battle-tested React + Tailwind + Framer Motion components (Magnetic buttons, 3D cards, CSS Grid accordions).
-- [`references/prompt-cookbook.md`](references/prompt-cookbook.md) — The 8-Field Mini-Spec Prompt Architecture for SaaS landing pages and developer portfolios.
-- [`references/chinese-typography.md`](references/chinese-typography.md) — CJK typography standards, modular font scales, Pangu spacing, optical negative tracking.
-- [`references/archive-aesthetic.md`](references/archive-aesthetic.md) — Kimi Archive & Knolling system: Swiss grids, diffuse softbox lighting, museum curation.
-- [`references/design-engineering-qa.md`](references/design-engineering-qa.md) — CSS `z-index` stacking context matrix, zero-CLS layout stability, GPU compositing checks.
-- [`references/github-highstar-ecosystem.md`](references/github-highstar-ecosystem.md) — Architectural deep-dive into shadcn/ui, Magic UI, Aceternity, and cmdk.
-
----
-
-### Quick Code Snippet: Double-Layer Magnetic Button
-
-```tsx
-import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
-
-export function MagneticButton({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const [pos, setPos] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (window.matchMedia("(pointer: coarse)").matches) return; // Touchscreen fallback
-    if (!buttonRef.current) return;
-    const { clientX, clientY } = e;
-    const { left, top, width, height } = buttonRef.current.getBoundingClientRect();
-    // 0.35 spring damping attraction
-    setPos({ x: (clientX - (left + width / 2)) * 0.35, y: (clientY - (top + height / 2)) * 0.35 });
-  };
-
-  return (
-    <motion.button
-      ref={buttonRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={() => setPos({ x: 0, y: 0 })}
-      animate={{ x: pos.x, y: pos.y }}
-      transition={{ type: "spring", stiffness: 180, damping: 14, mass: 0.1 }}
-      className={`relative inline-flex items-center justify-center rounded-xl px-6 py-3 select-none active:scale-[0.98] ${className}`}
-    >
-      <motion.span
-        animate={{ x: pos.x * 0.5, y: pos.y * 0.5 }} // Inner text parallax
-        transition={{ type: "spring", stiffness: 220, damping: 16 }}
-        className="inline-flex items-center gap-2 pointer-events-none"
-      >
-        {children}
-      </motion.span>
-    </motion.button>
-  );
-}
-```
-
----
-
-<a name="credits"></a>
-## 致谢与灵感来源 (Credits & Inspirations) (Credits & Inspirations)
-
-本项目深受以下顶尖创作者与开源先锋的深刻启发：
-
-- **特别致谢：[Adrian Punk (@AdrianPunk115)](https://x.com/AdrianPunk115)**  
-  本技能的核心词典与任务书体系深受其 X 爆款长文《Vibe Coding 视觉词典》、《Vibe Coding 网页动效词典》、《2026 中文字体 AI 提示词指南》与《Kimi Archive 档案美学体系》的深刻启发。
-- **[Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill)**：感谢其首创的 Anti-Slop 理念、Design Read 与三档旋钮系统。
-- **[shadcn/ui](https://github.com/shadcn-ui/ui)** & **[Radix UI](https://github.com/radix-ui/primitives)**：无样式可访问性基石。
-- **[magicuidesign/magicui](https://github.com/magicuidesign/magicui)** & **[aceternity/ui](https://github.com/aceternity/ui)**：现代微动效与震撼视觉呈现。
-- **[DavidHDev/react-bits](https://github.com/DavidHDev/react-bits)**：丰富的创意动画与文本解密动效。
-- **[Emil Kowalski](https://emilkowal.ski/)** ([animations.dev](https://animations.dev/), [sonner](https://github.com/emilkowalski/sonner), [vaul](https://github.com/emilkowalski/vaul)) 与 **[Paco Coursey](https://paco.me/)** ([cmdk](https://github.com/pacocoursey/cmdk))：手艺级交互设计工程学的布道者。
-- **[ibelick](https://github.com/ibelick)**：质感底纹与噪点美学启发。
-
----
-
-## 开源许可证 (License) (License)
-
-本项目采用 [MIT License](LICENSE) 开源。欢迎 Star、Fork、提 PR 或在社区中自由分享！
+This project is licensed under the [MIT License](LICENSE). Feel free to star, fork, submit PRs, and share with the community!
