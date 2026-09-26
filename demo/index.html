@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vibe-frontend-design ｜ 真实交互效果交互演示 (Live Interactive Showcase)</title>
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            canvas: '#08090C',
+            surface1: '#101116',
+            surface2: '#171821',
+            borderSubtle: 'rgba(255, 255, 255, 0.08)',
+            borderStrong: 'rgba(255, 255, 255, 0.18)',
+          },
+          animation: {
+            'shimmer': 'shimmer 1.8s infinite',
+            'border-beam': 'border-beam 8s infinite linear',
+          },
+          keyframes: {
+            shimmer: {
+              '100%': { transform: 'translateX(100%)' },
+            },
+            'border-beam': {
+              '100%': { offsetDistance: '100%' },
+            },
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      background-color: #08090C;
+      color: #EDEDED;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    /* 纯 CSS 手风琴动画 */
+    .accordion-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 250ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .accordion-item[data-open="true"] .accordion-content {
+      grid-template-rows: 1fr;
+    }
+    .accordion-inner {
+      overflow: hidden;
+    }
+    /* 胶片噪点背景 */
+    .noise-layer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 50;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+  </style>
+</head>
+<body class="min-h-screen selection:bg-blue-500/30 selection:text-blue-200">
+  <div class="noise-layer"></div>
+
+  <!-- 顶部导航 -->
+  <header class="sticky top-0 z-40 border-b border-white/[0.08] bg-[#08090C]/80 backdrop-blur-md px-6 py-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600/20 text-blue-400 border border-blue-500/30 font-mono font-bold text-sm">V</span>
+        <span class="font-bold tracking-tight text-white">vibe-frontend-design</span>
+        <span class="text-xs px-2 py-0.5 rounded-full bg-white/10 text-zinc-400 font-mono">Live Demo</span>
+      </div>
+      <div class="flex items-center gap-4 text-sm text-zinc-400">
+        <a href="https://github.com/win/vibe-frontend-design" target="_blank" class="hover:text-white transition-colors flex items-center gap-1.5">
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          GitHub 仓库
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主视觉区 -->
+  <main class="max-w-7xl mx-auto px-6 py-16 space-y-24">
+    <!-- Hero 介绍 -->
+    <section class="text-center max-w-3xl mx-auto space-y-6">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/10 text-xs font-medium text-blue-400">
+        <span class="h-1.5 w-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+        真实物理效果与交互组件展厅
+      </div>
+      <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
+        告别 AI 模板油腻感，<br>
+        <span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-white bg-clip-text text-transparent">
+          体验纯正的设计工程手艺。
+        </span>
+      </h1>
+      <p class="text-base md:text-lg text-zinc-400 leading-relaxed max-w-2xl mx-auto">
+        下面是本 Skill 中内置的真实前端组件效果演示。你可以在浏览器中直接移动鼠标、点击测试，零距离感受物理阻尼与微交互质感。
+      </p>
+    </section>
+
+    <!-- 演示模块 1: 磁吸按钮 (Magnetic Button) -->
+    <section class="space-y-6">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3">
+        <div>
+          <h2 class="text-xl font-bold text-white tracking-tight flex items-center gap-2">
+            <span>🧲 示例 1：双层视差磁吸按钮 (Magnetic Button)</span>
+          </h2>
+          <p class="text-sm text-zinc-400 mt-1">光标靠近按钮周边 1.5 倍区域时产生引力牵引，文字额外产生 50% 视差位移，移出弹簧回弹。</p>
+        </div>
+        <span class="text-xs font-mono text-zinc-500">references/code-recipes.md #1</span>
+      </div>
+
+      <div class="h-64 rounded-2xl border border-white/10 bg-surface1 flex items-center justify-center relative overflow-hidden">
+        <div class="text-xs text-zinc-600 absolute top-4 left-4 font-mono">请将鼠标靠近下方按钮体验引力拉扯 ➔</div>
+
+        <button id="magnetic-btn" class="relative group px-8 py-4 rounded-xl font-medium text-white bg-zinc-900 border border-white/20 shadow-xl transition-colors hover:border-blue-400/50 active:scale-95 select-none">
+          <span id="magnetic-text" class="inline-flex items-center gap-2 pointer-events-none transition-transform">
+            <span>体验物理磁吸牵引</span>
+            <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 演示模块 2: 动态光标聚光灯卡片 (Spotlight Cards) -->
+    <section class="space-y-6">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3">
+        <div>
+          <h2 class="text-xl font-bold text-white tracking-tight">💡 示例 2：局部光标聚光灯卡片 (Dynamic Spotlight Hover)</h2>
+          <p class="text-sm text-zinc-400 mt-1">鼠标在卡片上方滑动时，径向渐变微光紧紧跟随光标坐标流动，激活 1px 发光边框。</p>
+        </div>
+        <span class="text-xs font-mono text-zinc-500">references/code-recipes.md #2</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="spotlight-card group relative rounded-2xl bg-surface1 p-6 border border-white/10 overflow-hidden cursor-pointer transition-all duration-300 hover:border-white/25 hover:shadow-2xl">
+          <div class="spotlight-glow pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+          <div class="relative z-10 space-y-3">
+            <span class="text-xs font-mono uppercase text-blue-400 font-semibold tracking-wider">01 / LAYOUT</span>
+            <h3 class="text-lg font-bold text-white">Bento Grid 便当盒</h3>
+            <p class="text-sm text-zinc-400 leading-relaxed">告别 AI 默认的三等分卡片，采用主次分明的错落 2x2 主角网格排版。</p>
+          </div>
+        </div>
+
+        <div class="spotlight-card group relative rounded-2xl bg-surface1 p-6 border border-white/10 overflow-hidden cursor-pointer transition-all duration-300 hover:border-white/25 hover:shadow-2xl">
+          <div class="spotlight-glow pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+          <div class="relative z-10 space-y-3">
+            <span class="text-xs font-mono uppercase text-indigo-400 font-semibold tracking-wider">02 / PHYSICS</span>
+            <h3 class="text-lg font-bold text-white">Spring 弹簧物理</h3>
+            <p class="text-sm text-zinc-400 leading-relaxed">阻尼系数与刚度精准调校，拒绝机械匀速，赋予组件真实重量与触感。</p>
+          </div>
+        </div>
+
+        <div class="spotlight-card group relative rounded-2xl bg-surface1 p-6 border border-white/10 overflow-hidden cursor-pointer transition-all duration-300 hover:border-white/25 hover:shadow-2xl">
+          <div class="spotlight-glow pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+          <div class="relative z-10 space-y-3">
+            <span class="text-xs font-mono uppercase text-purple-400 font-semibold tracking-wider">03 / TYPO</span>
+            <h3 class="text-lg font-bold text-white">中西文排版黄金律</h3>
+            <p class="text-sm text-zinc-400 leading-relaxed">大标题 -0.02em 负字距紧凑设计，中西文 0.25em 盘古之白，严防孤字断行。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 演示模块 3: 真 3D 分层浮出卡片 (Aceternity 3D Tilt Card) -->
+    <section class="space-y-6">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3">
+        <div>
+          <h2 class="text-xl font-bold text-white tracking-tight">🃏 示例 3：真 3D 透视分层卡片 (3D Card Perspective)</h2>
+          <p class="text-sm text-zinc-400 mt-1">鼠标划过卡片时计算 3D 旋转角度，内部元素带有真实 Z 轴高度浮出（translateZ）。</p>
+        </div>
+        <span class="text-xs font-mono text-zinc-500">references/code-recipes.md #10</span>
+      </div>
+
+      <div class="h-80 rounded-2xl border border-white/10 bg-surface1 flex items-center justify-center [perspective:1000px]">
+        <div id="tilt-card" class="relative w-80 rounded-2xl bg-zinc-900/90 p-6 border border-white/15 shadow-2xl transition-transform duration-150 ease-out [transform-style:preserve-3d] cursor-pointer">
+          <div class="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30 inline-block [transform:translateZ(30px)]">
+            3D ELEVATION
+          </div>
+          <h3 class="text-xl font-bold text-white mt-3 tracking-tight [transform:translateZ(50px)]">
+            真 3D 空间交互
+          </h3>
+          <p class="text-xs text-zinc-400 mt-2 leading-relaxed [transform:translateZ(40px)]">
+            将鼠标放在卡片上方轻轻晃动，感受标题和按钮从卡片表面立体浮出的层次感。
+          </p>
+          <div class="mt-6 [transform:translateZ(60px)]">
+            <button class="w-full py-2.5 rounded-lg text-xs font-semibold bg-white text-zinc-950 shadow-md">
+              立体交互测试按钮
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 演示模块 4: 赛博字符解密动画 (Decrypted Text) -->
+    <section class="space-y-6">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3">
+        <div>
+          <h2 class="text-xl font-bold text-white tracking-tight">⚡ 示例 4：赛博字符解密乱码动画 (Decrypted Text)</h2>
+          <p class="text-sm text-zinc-400 mt-1">鼠标悬停在下方文字上，触发类似黑客终端的字符高频翻滚解密过程。</p>
+        </div>
+        <span class="text-xs font-mono text-zinc-500">references/code-recipes.md #11</span>
+      </div>
+
+      <div class="h-40 rounded-2xl border border-white/10 bg-surface1 flex flex-col items-center justify-center gap-3">
+        <div id="decrypt-target" class="text-3xl font-extrabold tracking-tight text-white cursor-pointer font-mono select-none px-4 py-2 rounded-lg hover:bg-white/5 transition-colors">
+          SEE THE SIGNAL BEFORE THE NOISE
+        </div>
+        <span class="text-xs text-zinc-500 font-mono">（请将鼠标悬停在上方文字上触发重新解密）</span>
+      </div>
+    </section>
+
+    <!-- 演示模块 5: 零重排纯 CSS 手风琴 (Zero-JS Accordion) -->
+    <section class="space-y-6">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3">
+        <div>
+          <h2 class="text-xl font-bold text-white tracking-tight">🪟 示例 5：纯 CSS 零重排手风琴 (Zero-JS-Calculation Accordion)</h2>
+          <p class="text-sm text-zinc-400 mt-1">彻底告别 JS 读取 scrollHeight 引起的重排卡顿，基于现代 CSS Grid 达成 60fps 丝滑展开。</p>
+        </div>
+        <span class="text-xs font-mono text-zinc-500">references/code-recipes.md #6</span>
+      </div>
+
+      <div class="max-w-2xl mx-auto divide-y divide-white/10 rounded-2xl border border-white/10 bg-surface1 p-6">
+        <div class="accordion-item py-4 cursor-pointer" data-open="true">
+          <div class="flex items-center justify-between text-base font-semibold text-white">
+            <span>为什么普通的 AI 网页总有一股油腻的“模板味”？</span>
+            <span class="accordion-icon text-xl text-zinc-400 transition-transform duration-300 rotate-45">+</span>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-inner">
+              <p class="pt-3 text-sm text-zinc-400 leading-relaxed">
+                因为大语言模型默认偏好最安全的公约数：纯黑底、刺眼的紫色渐变大光斑、机械居中的三等分卡片。只要没有显式注入设计工程学约束（Design Variance、负字距、Bento 结构），模型就会滑向千篇一律的廉价模板。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item py-4 cursor-pointer" data-open="false">
+          <div class="flex items-center justify-between text-base font-semibold text-white">
+            <span>本 Skill 是如何彻底解决这个问题的？</span>
+            <span class="accordion-icon text-xl text-zinc-400 transition-transform duration-300 rotate-0">+</span>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-inner">
+              <p class="pt-3 text-sm text-zinc-400 leading-relaxed">
+                通过在生成前强制输出 Design Read（设计定调）与三档旋钮系统（变化率、动效烈度、信息密度），直接封死 AI 偷懒的退路；同时内置了 12 套生产级源码与八字段任务书框架，将“玄学审美”转为硬核工程交付。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 演示模块 6: 零 CLS 高光波纹骨架屏 (Shimmer Skeleton) -->
+    <section class="space-y-6">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3">
+        <div>
+          <h2 class="text-xl font-bold text-white tracking-tight">⏱️ 示例 6：1:1 轮廓高光波纹骨架屏 (Shimmer Skeleton)</h2>
+          <p class="text-sm text-zinc-400 mt-1">1:1 严格复刻最终卡片尺寸与内边距，带有平滑扫过的倾斜光泽波纹，达成 CLS = 0。</p>
+        </div>
+        <span class="text-xs font-mono text-zinc-500">references/code-recipes.md #7</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="relative overflow-hidden rounded-2xl bg-surface1 p-6 border border-white/10 space-y-4">
+          <div class="pointer-events-none absolute inset-0 -translate-x-full animate-[shimmer_1.8s_infinite] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent"></div>
+          <div class="h-4 w-28 rounded bg-white/10"></div>
+          <div class="h-7 w-3/4 rounded bg-white/10"></div>
+          <div class="space-y-2 pt-2">
+            <div class="h-3 w-full rounded bg-white/5"></div>
+            <div class="h-3 w-4/5 rounded bg-white/5"></div>
+          </div>
+          <div class="h-10 w-32 rounded-xl bg-white/10 pt-2"></div>
+        </div>
+
+        <div class="relative overflow-hidden rounded-2xl bg-surface1 p-6 border border-white/10 space-y-4">
+          <div class="pointer-events-none absolute inset-0 -translate-x-full animate-[shimmer_1.8s_infinite] bg-gradient-to-r from-transparent via-white/[0.06] to-transparent"></div>
+          <div class="h-4 w-24 rounded bg-white/10"></div>
+          <div class="h-7 w-2/3 rounded bg-white/10"></div>
+          <div class="space-y-2 pt-2">
+            <div class="h-3 w-full rounded bg-white/5"></div>
+            <div class="h-3 w-3/4 rounded bg-white/5"></div>
+          </div>
+          <div class="h-10 w-28 rounded-xl bg-white/10 pt-2"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 底部 -->
+  <footer class="border-t border-white/10 py-12 text-center text-xs text-zinc-500">
+    <p>vibe-frontend-design · 开源交互效果演示 · 遵循 MIT 开源协议</p>
+  </footer>
+
+  <!-- 交互脚本 -->
+  <script>
+    // 1. 磁吸按钮交互逻辑
+    const magBtn = document.getElementById('magnetic-btn');
+    const magText = document.getElementById('magnetic-text');
+
+    magBtn.addEventListener('mousemove', (e) => {
+      const rect = magBtn.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const dx = (e.clientX - centerX) * 0.4;
+      const dy = (e.clientY - centerY) * 0.4;
+      magBtn.style.transform = `translate(${dx}px, ${dy}px)`;
+      magText.style.transform = `translate(${dx * 0.5}px, ${dy * 0.5}px)`;
+    });
+
+    magBtn.addEventListener('mouseleave', () => {
+      magBtn.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+      magText.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+      magBtn.style.transform = 'translate(0px, 0px)';
+      magText.style.transform = 'translate(0px, 0px)';
+      setTimeout(() => {
+        magBtn.style.transition = '';
+        magText.style.transition = '';
+      }, 400);
+    });
+
+    // 2. Spotlight 聚光灯跟随
+    document.querySelectorAll('.spotlight-card').forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const glow = card.querySelector('.spotlight-glow');
+        glow.style.background = `radial-gradient(400px circle at ${x}px ${y}px, rgba(255, 255, 255, 0.08), transparent 80%)`;
+      });
+    });
+
+    // 3. 3D Tilt 卡片交互
+    const tiltCard = document.getElementById('tilt-card');
+    const tiltContainer = tiltCard.parentElement;
+
+    tiltContainer.addEventListener('mousemove', (e) => {
+      const rect = tiltCard.getBoundingClientRect();
+      const x = (e.clientX - rect.left - rect.width / 2) / 12;
+      const y = (e.clientY - rect.top - rect.height / 2) / 12;
+      tiltCard.style.transform = `rotateX(${-y}deg) rotateY(${x}deg)`;
+    });
+
+    tiltContainer.addEventListener('mouseleave', () => {
+      tiltCard.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    });
+
+    // 4. 赛博字符解密动画
+    const decryptTarget = document.getElementById('decrypt-target');
+    const originalText = decryptTarget.innerText;
+    const glyphs = "!@#$%^&*()_+~|}{[]:;?><,./-=";
+
+    function runDecrypt() {
+      let iteration = 0;
+      const interval = setInterval(() => {
+        decryptTarget.innerText = originalText
+          .split("")
+          .map((char, index) => {
+            if (index < iteration) return originalText[index];
+            if (char === " ") return " ";
+            return glyphs[Math.floor(Math.random() * glyphs.length)];
+          })
+          .join("");
+
+        if (iteration >= originalText.length) {
+          clearInterval(interval);
+        }
+        iteration += 1 / 2;
+      }, 35);
+    }
+
+    decryptTarget.addEventListener('mouseenter', runDecrypt);
+
+    // 5. 纯 CSS 手风琴点击折叠
+    document.querySelectorAll('.accordion-item').forEach((item) => {
+      item.addEventListener('click', () => {
+        const isOpen = item.getAttribute('data-open') === 'true';
+        item.setAttribute('data-open', !isOpen);
+        const icon = item.querySelector('.accordion-icon');
+        if (!isOpen) {
+          icon.style.transform = 'rotate(45deg)';
+        } else {
+          icon.style.transform = 'rotate(0deg)';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

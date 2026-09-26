@@ -48,6 +48,39 @@
 
 ---
 
+### 🕹️ 零安装真实交互效果演示 (Live Interactive Demo)
+
+本项目自带**无需任何构建环境、开箱即用的真实交互演示页面**（`demo/index.html`）：
+- **如何打开**：直接双击 `demo/index.html`（或在终端运行 `open demo/index.html` / `start demo/index.html`），在任何现代浏览器中即可零距离体验：
+  - 🧲 **双层磁吸按钮**：光标靠近产生引力拉扯，文字额外视差位移，移出自然弹簧震荡回弹；
+  - 💡 **动态光标聚光灯卡片**：径向渐变微光紧跟鼠标像素坐标流动，激活 1px 细线边框；
+  - 🃏 **真 3D 透视分层卡片**：随鼠标角度产生真实立体空间倾斜，内部文字按钮 Z 轴悬浮浮出；
+  - ⚡ **赛博字符解密动画**：鼠标悬停触发黑客终端级字符翻滚解密；
+  - 🪟 **纯 CSS 零重排手风琴**：点击瞬间 60fps 丝滑展开，解决传统测量 scrollHeight 引起的重排掉帧；
+  - ⏱️ **高光波纹骨架屏**：1:1 复刻最终轮廓，实现 CLS = 0。
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                   布局结构对比图示 (Visual Layout Comparison)           │
+├────────────────────────────────────────────────────────────────────────┤
+│ 普通 AI 的无脑对称模板 (The Slop):                                     │
+│ ┌───────────┬───────────┬───────────┐                                  │
+│ │ Card 1    │ Card 2    │ Card 3    │ (千篇一律，毫无视觉主次与层次)   │
+│ └───────────┴───────────┴───────────┘                                  │
+│                                                                        │
+│ 本技能驱动的 Bento Grid 黄金布局 (The Craft):                          │
+│ ┌───────────────────────────────────┬───────────┐                      │
+│ │                                   │ Stat 01   │                      │
+│ │         HERO ANCHOR TILE          ├───────────┤                      │
+│ │         (主角大卡 2x2)            │ Stat 02   │                      │
+│ │         核心可视化拓扑流图        ├───────────┴────────────────────┐ │
+│ │                                   │ Wide Feature Card              │ │
+│ └───────────────────────────────────┴────────────────────────────────┘ │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
 ### 📚 模块化知识库全景 (超过 120 KB 纯干货)
 
 遵循 Anthropic 官方 Skill 规范的**渐进式披露（Progressive Disclosure）**原则，分为主蓝图与 7 本专项参考专著：
@@ -231,6 +264,19 @@ Before generating any code, the agent infers and locks three baseline dials:
 - **`DESIGN_VARIANCE` (1 - 10)**: 1 = Strict Symmetry ➔ 10 = Asymmetric / Expressive Artwork
 - **`MOTION_INTENSITY` (1 - 10)**: 1 = Clean Static ➔ 10 = Cinematic Physics & Multi-layer Parallax
 - **`VISUAL_DENSITY` (1 - 10)**: 1 = Airy Gallery Spacing ➔ 10 = Mission-Critical Dashboard
+
+---
+
+### 🕹️ Live Interactive Demo (Zero-Dependency)
+
+The repository includes a standalone interactive showcase page (`demo/index.html`):
+- **How to run**: Simply double-click `demo/index.html` or run `open demo/index.html` in your terminal to interact with all the physical effects in real time:
+  - 🧲 **Double-Layer Magnetic Button**: Real spring physics pulling both the button and inner text with differential parallax.
+  - 💡 **Dynamic Cursor Spotlight**: Real-time radial gradient tracking mouse coordinates.
+  - 🃏 **3D Perspective Tilt Card**: True 3D elevation along the Z-axis (`translateZ`).
+  - ⚡ **Decrypted / Scramble Text**: Cyberpunk character rolling on hover.
+  - 🪟 **Pure CSS Zero-Layout-Thrashing Accordion**: 60fps smooth grid expansion without JS `scrollHeight` reflows.
+  - ⏱️ **Shimmer Skeleton Screen**: 1:1 blueprint outline with zero CLS.
 
 ---
 
