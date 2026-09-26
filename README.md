@@ -9,7 +9,7 @@
 [![Cursor](https://img.shields.io/badge/Cursor%20%2F%20Windsurf-Ready-10b981.svg?style=flat-square)](https://cursor.com)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS%20v3%20%2F%20v4-38bdf8.svg?style=flat-square)](https://tailwindcss.com)
 [![Framer Motion](https://img.shields.io/badge/Framer%20Motion-Physics-ff0055.svg?style=flat-square)](https://motion.dev)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/win/vibe-frontend-design/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/shinewinsu/vibe-frontend-design/pulls)
 
 <br />
 
@@ -235,13 +235,13 @@ export function SpotlightCard({ children, className = "" }: { children: React.Re
 #### 1. 在 Claude Code 中全局使用（推荐）
 ```bash
 mkdir -p ~/.claude/skills
-git clone https://github.com/win/vibe-frontend-design.git ~/.claude/skills/vibe-frontend-design
+git clone https://github.com/shinewinsu/vibe-frontend-design.git ~/.claude/skills/vibe-frontend-design
 ```
 
 #### 2. 在具体前端项目中单仓生效
 ```bash
 mkdir -p .claude/skills
-git clone https://github.com/win/vibe-frontend-design.git .claude/skills/vibe-frontend-design
+git clone https://github.com/shinewinsu/vibe-frontend-design.git .claude/skills/vibe-frontend-design
 ```
 
 #### 3. 在终端中随时调用
