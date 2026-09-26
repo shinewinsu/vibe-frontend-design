@@ -16,7 +16,7 @@
 
     <!-- Bad Badge -->
     <rect x="20" y="20" width="180" height="24" rx="6" fill="#991B1B" />
-    <text x="110" y="36" fill="#FEE2E2" font-size="11" class="mono" font-weight="bold" text-anchor="middle">❌ GENERIC AI SLOP</text>
+    <text x="110" y="36" fill="#FEE2E2" font-size="11" class="mono" font-weight="bold" text-anchor="middle">[X] GENERIC AI SLOP</text>
 
     <!-- Ugly Purple Blob Simulation -->
     <circle cx="205" cy="130" r="70" fill="#A855F7" opacity="0.35" filter="blur(20px)" />
@@ -45,7 +45,7 @@
     </g>
 
     <!-- Disasters summary -->
-    <text x="205" y="265" fill="#EF4444" font-size="11" class="sans" text-anchor="middle">⚠️ 紫色渐变球 · 无脑三等分对称 · 零物理反馈 · 松垮字距</text>
+    <text x="205" y="265" fill="#EF4444" font-size="11" class="sans" text-anchor="middle">[Warning] 紫色渐变球 · 无脑三等分对称 · 零物理反馈 · 松垮字距</text>
   </g>
 
   <!-- ================= RIGHT: VIBE FRONTEND DESIGN (CRAFT) ================= -->
@@ -55,7 +55,7 @@
 
     <!-- Good Badge -->
     <rect x="20" y="20" width="200" height="24" rx="6" fill="#1E3A8A" />
-    <text x="120" y="36" fill="#93C5FD" font-size="11" class="mono" font-weight="bold" text-anchor="middle">✅ VIBE DESIGN CRAFT</text>
+    <text x="120" y="36" fill="#93C5FD" font-size="11" class="mono" font-weight="bold" text-anchor="middle">[OK] VIBE DESIGN CRAFT</text>
 
     <!-- High-taste Header with tight tracking -->
     <text x="24" y="80" fill="#FFFFFF" font-size="18" class="sans" font-weight="800" letter-spacing="-0.5">面向高吞吐工程体系的情报终端</text>
@@ -81,10 +81,10 @@
       <!-- Side Magnetic CTA Tile -->
       <rect x="242" y="58" width="120" height="52" rx="10" fill="#14151D" stroke="rgba(255,255,255,0.08)" />
       <rect x="252" y="70" width="100" height="28" rx="6" fill="#FFFFFF" />
-      <text x="302" y="88" fill="#090A0F" font-size="10" class="sans" font-weight="bold" text-anchor="middle">磁吸 CTA ➔</text>
+      <text x="302" y="88" fill="#090A0F" font-size="10" class="sans" font-weight="bold" text-anchor="middle">磁吸 CTA -></text>
     </g>
 
     <!-- Success summary -->
-    <text x="205" y="265" fill="#34D399" font-size="11" class="sans" text-anchor="middle">✨ 便当盒网格 · 1px 微发光边框 · 骨架屏 0 抖动 · 盘古中西排版</text>
+    <text x="205" y="265" fill="#34D399" font-size="11" class="sans" text-anchor="middle"> 便当盒网格 · 1px 微发光边框 · 骨架屏 0 抖动 · 盘古中西排版</text>
   </g>
 </svg>

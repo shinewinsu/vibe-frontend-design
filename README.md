@@ -13,16 +13,16 @@
 
 <br />
 
-[ 📖 English Documentation ](#-english-documentation) &nbsp;|&nbsp; [ 🇨🇳 简体中文文档 ](#-简体中文文档)
+[ English Documentation ](#english-documentation) &nbsp;|&nbsp; [ 简体中文文档 ](#chinese-documentation)
 
 </div>
 
 ---
 
 <a name="chinese"></a>
-## 🇨🇳 简体中文文档
+## 简体中文文档 (Chinese)
 
-### 🌟 为什么需要这个 Skill？
+### 为什么需要这个 Skill？
 
 在用 AI（Claude Code、Cursor、Windsurf、Codex）写前端时，开发者每天都在忍受以下**“AI 垃圾模板味（AI Slop）”**：
 1. **千篇一律的模板审美**：默认的紫色/粉色放射渐变大球、无脑三等分对称卡片、未调整字距的松垮大标题；
@@ -34,12 +34,12 @@
 
 ---
 
-### 🆚 视觉与工程对比：普通 AI 生成 vs. 注入本技能
+### 视觉与工程对比：普通 AI 生成 vs. 注入本技能
 
 | 维度 | 普通 AI 默认生成 (Generic AI Slop) | **注入 vibe-frontend-design (The Craft)** |
 |---|---|---|
 | **页面布局** | 单调死板的三等分对称卡片（3-Column Cards） | **错落自适应 Bento Grid（便当盒网格）**，主卡 `col-span-2 row-span-2` |
-| **色彩光影** | 纯黑底配刺眼紫色渐变大光斑（Purple Blobs） | **表面四层体系**（Canvas ➔ Surface ➔ Overlay），1px 细发光边框，局部光斑跟随 |
+| **色彩光影** | 纯黑底配刺眼紫色渐变大光斑（Purple Blobs） | **表面四层体系**（Canvas -> Surface -> Overlay），1px 细发光边框，局部光斑跟随 |
 | **动效物理** | 所有卡片以相同速度同时淡入，机械无脑 | **交错级联上浮（Stagger 50ms）**，物理弹簧阻尼（`stiffness: 180, damping: 14`） |
 | **交互手感** | 按钮点击无任何物理反馈，悬停无张力 | **双层视差磁吸按钮（Magnetic Button）**，点击 `active:scale-[0.98]` |
 | **中文字体** | 默认行高拥挤，大标题字间距散漫，标点掉行首 | **1.25 中文字阶黄金律**，大标题负字距（`-0.02em`），中西文盘古之白，标点避头尾 |
@@ -51,16 +51,16 @@
 
 ---
 
-### 🕹️ 零安装真实交互效果演示 (Live Interactive Demo)
+### 零安装真实交互效果演示 (Live Interactive Demo)
 
 本项目自带**无需任何构建环境、开箱即用的真实交互演示页面**（`demo/index.html`）：
 - **如何打开**：直接双击 `demo/index.html`（或在终端运行 `open demo/index.html` / `start demo/index.html`），在任何现代浏览器中即可零距离体验：
-  - 🧲 **双层磁吸按钮**：光标靠近产生引力拉扯，文字额外视差位移，移出自然弹簧震荡回弹；
-  - 💡 **动态光标聚光灯卡片**：径向渐变微光紧跟鼠标像素坐标流动，激活 1px 细线边框；
-  - 🃏 **真 3D 透视分层卡片**：随鼠标角度产生真实立体空间倾斜，内部文字按钮 Z 轴悬浮浮出；
-  - ⚡ **赛博字符解密动画**：鼠标悬停触发黑客终端级字符翻滚解密；
-  - 🪟 **纯 CSS 零重排手风琴**：点击瞬间 60fps 丝滑展开，解决传统测量 scrollHeight 引起的重排掉帧；
-  - ⏱️ **高光波纹骨架屏**：1:1 复刻最终轮廓，实现 CLS = 0。
+  -  **双层磁吸按钮**：光标靠近产生引力拉扯，文字额外视差位移，移出自然弹簧震荡回弹；
+  -  **动态光标聚光灯卡片**：径向渐变微光紧跟鼠标像素坐标流动，激活 1px 细线边框；
+  -  **真 3D 透视分层卡片**：随鼠标角度产生真实立体空间倾斜，内部文字按钮 Z 轴悬浮浮出；
+  -  **赛博字符解密动画**：鼠标悬停触发黑客终端级字符翻滚解密；
+  -  **纯 CSS 零重排手风琴**：点击瞬间 60fps 丝滑展开，解决传统测量 scrollHeight 引起的重排掉帧；
+  -  **高光波纹骨架屏**：1:1 复刻最终轮廓，实现 CLS = 0。
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
@@ -88,7 +88,7 @@
 
 ---
 
-### 📚 模块化知识库全景 (超过 120 KB 纯干货)
+### 模块化知识库全景 (超过 120 KB 纯干货)
 
 遵循 Anthropic 官方 Skill 规范的**渐进式披露（Progressive Disclosure）**原则，分为主蓝图与 7 本专项参考专著：
 
@@ -108,7 +108,7 @@ vibe-frontend-design/
 
 ---
 
-### 💻 核心代码配方示例 (Code Showcase)
+### 核心代码配方示例 (Code Showcase)
 
 #### 1. 生产级磁吸按钮（双层视差 + 物理弹簧 + 触屏降级）
 > 鼠标在按钮周边 1.5 倍感应区内时，按钮与文字产生双层流体视差位移，移出后弹簧回弹：
@@ -208,7 +208,7 @@ export function SpotlightCard({ children, className = "" }: { children: React.Re
 
 ---
 
-### 📝 八字段任务书实战范式 (Prompt Specification in Action)
+###  八字段任务书实战范式 (Prompt Specification in Action)
 
 当你让 AI 编写一个落地页时，不要只说“写个好看的网页”，而是套用本 Skill 独家的**八字段任务书框架**：
 
@@ -216,7 +216,7 @@ export function SpotlightCard({ children, className = "" }: { children: React.Re
 # 1. 角色 (Role): 兼任资深信息架构师与高阶前端设计工程师。
 # 2. 目标 (Goal): 为分布式 AI 监控平台构建高转化官网首屏，核心转化为点击“开始免费接入”。
 # 3. 受众 (Audience): 追求高信噪比的全栈工程师与架构师，桌面宽屏查阅为主。
-# 4. 页面 (Pages): 单页 Landing Page (Hero ➔ Social Proof 跑马灯 ➔ Bento Features ➔ Pricing ➔ FAQ)。
+# 4. 页面 (Pages): 单页 Landing Page (Hero -> Social Proof 跑马灯 -> Bento Features -> Pricing -> FAQ)。
 # 5. 架构 (IA): F 型视觉动线，左侧痛点价值阐述，右侧交互式终端运行 Canvas。
 # 6. 视觉 (Design System): Linear 暗调科技风 (底色 #08090C，表面 #111218，1px 发光边框)，字阶 1.25，紧凑负字距。
 # 7. 交互 (Interactions): 主按钮磁吸回弹，Bento 卡片聚光灯跟随，FAQ 手风琴 CSS Grid 展开。
@@ -230,7 +230,7 @@ export function SpotlightCard({ children, className = "" }: { children: React.Re
 
 ---
 
-### 🚀 极速安装与使用指南
+###  极速安装与使用指南
 
 #### 1. 在 Claude Code 中全局使用（推荐）
 ```bash
@@ -255,9 +255,9 @@ git clone https://github.com/win/vibe-frontend-design.git .claude/skills/vibe-fr
 ---
 
 <a name="english"></a>
-## 📖 English Documentation
+## English Documentation
 
-### 🌟 What is vibe-frontend-design?
+### What is vibe-frontend-design?
 
 When building web frontends with AI coding assistants (Claude Code, Cursor, Windsurf, Codex), developers constantly struggle with **"AI Slop"**:
 - Identical generic aesthetics (pitch-black backgrounds with purple/magenta glowing mesh blobs).
@@ -270,24 +270,24 @@ It fuses Adrian Punk's acclaimed visual and motion dictionaries, GitHub's top-ti
 
 ---
 
-### 📐 The Three Dials Configuration
+### The Three Dials Configuration
 Before generating any code, the agent infers and locks three baseline dials:
-- **`DESIGN_VARIANCE` (1 - 10)**: 1 = Strict Symmetry ➔ 10 = Asymmetric / Expressive Artwork
-- **`MOTION_INTENSITY` (1 - 10)**: 1 = Clean Static ➔ 10 = Cinematic Physics & Multi-layer Parallax
-- **`VISUAL_DENSITY` (1 - 10)**: 1 = Airy Gallery Spacing ➔ 10 = Mission-Critical Dashboard
+- **`DESIGN_VARIANCE` (1 - 10)**: 1 = Strict Symmetry -> 10 = Asymmetric / Expressive Artwork
+- **`MOTION_INTENSITY` (1 - 10)**: 1 = Clean Static -> 10 = Cinematic Physics & Multi-layer Parallax
+- **`VISUAL_DENSITY` (1 - 10)**: 1 = Airy Gallery Spacing -> 10 = Mission-Critical Dashboard
 
 ---
 
-### 🕹️ Live Interactive Demo (Zero-Dependency)
+### Live Interactive Demo (Zero-Dependency)
 
 The repository includes a standalone interactive showcase page (`demo/index.html`):
 - **How to run**: Simply double-click `demo/index.html` or run `open demo/index.html` in your terminal to interact with all the physical effects in real time:
-  - 🧲 **Double-Layer Magnetic Button**: Real spring physics pulling both the button and inner text with differential parallax.
-  - 💡 **Dynamic Cursor Spotlight**: Real-time radial gradient tracking mouse coordinates.
-  - 🃏 **3D Perspective Tilt Card**: True 3D elevation along the Z-axis (`translateZ`).
-  - ⚡ **Decrypted / Scramble Text**: Cyberpunk character rolling on hover.
-  - 🪟 **Pure CSS Zero-Layout-Thrashing Accordion**: 60fps smooth grid expansion without JS `scrollHeight` reflows.
-  - ⏱️ **Shimmer Skeleton Screen**: 1:1 blueprint outline with zero CLS.
+  -  **Double-Layer Magnetic Button**: Real spring physics pulling both the button and inner text with differential parallax.
+  -  **Dynamic Cursor Spotlight**: Real-time radial gradient tracking mouse coordinates.
+  -  **3D Perspective Tilt Card**: True 3D elevation along the Z-axis (`translateZ`).
+  -  **Decrypted / Scramble Text**: Cyberpunk character rolling on hover.
+  -  **Pure CSS Zero-Layout-Thrashing Accordion**: 60fps smooth grid expansion without JS `scrollHeight` reflows.
+  -  **Shimmer Skeleton Screen**: 1:1 blueprint outline with zero CLS.
 
 <p align="center">
   <img src="assets/bento-showcase.svg" alt="Bento Grid Showcase" width="100%" />
@@ -295,21 +295,21 @@ The repository includes a standalone interactive showcase page (`demo/index.html
 
 ---
 
-### 📦 Modular Knowledge Base Index
+### Modular Knowledge Base Index
 
-- 📘 [`SKILL.md`](SKILL.md) — The Master Execution Blueprint: Design Read, Three Dials, Anti-Slop 10 Prohibitions, 12-point QA matrix.
-- 📐 [`references/visual-dictionary.md`](references/visual-dictionary.md) — Bento Grid rules, Split-screen patterns, 5 modern aesthetic systems, surface level tokens.
-- 🎬 [`references/motion-dictionary.md`](references/motion-dictionary.md) — 4-layer motion framework, stagger intervals (50ms), parallax differential rates (0.3x/1.0x/1.4x), FLIP reordering.
-- 💻 [`references/code-recipes.md`](references/code-recipes.md) — 12 battle-tested React + Tailwind + Framer Motion components (Magnetic buttons, 3D cards, CSS Grid accordions).
-- 📝 [`references/prompt-cookbook.md`](references/prompt-cookbook.md) — The 8-Field Mini-Spec Prompt Architecture for SaaS landing pages and developer portfolios.
-- 🀄 [`references/chinese-typography.md`](references/chinese-typography.md) — CJK typography standards, modular font scales, Pangu spacing, optical negative tracking.
-- 🏛️ [`references/archive-aesthetic.md`](references/archive-aesthetic.md) — Kimi Archive & Knolling system: Swiss grids, diffuse softbox lighting, museum curation.
-- 🛠️ [`references/design-engineering-qa.md`](references/design-engineering-qa.md) — CSS `z-index` stacking context matrix, zero-CLS layout stability, GPU compositing checks.
-- ⭐ [`references/github-highstar-ecosystem.md`](references/github-highstar-ecosystem.md) — Architectural deep-dive into shadcn/ui, Magic UI, Aceternity, and cmdk.
+- [`SKILL.md`](SKILL.md) — The Master Execution Blueprint: Design Read, Three Dials, Anti-Slop 10 Prohibitions, 12-point QA matrix.
+- [`references/visual-dictionary.md`](references/visual-dictionary.md) — Bento Grid rules, Split-screen patterns, 5 modern aesthetic systems, surface level tokens.
+- [`references/motion-dictionary.md`](references/motion-dictionary.md) — 4-layer motion framework, stagger intervals (50ms), parallax differential rates (0.3x/1.0x/1.4x), FLIP reordering.
+- [`references/code-recipes.md`](references/code-recipes.md) — 12 battle-tested React + Tailwind + Framer Motion components (Magnetic buttons, 3D cards, CSS Grid accordions).
+- [`references/prompt-cookbook.md`](references/prompt-cookbook.md) — The 8-Field Mini-Spec Prompt Architecture for SaaS landing pages and developer portfolios.
+- [`references/chinese-typography.md`](references/chinese-typography.md) — CJK typography standards, modular font scales, Pangu spacing, optical negative tracking.
+- [`references/archive-aesthetic.md`](references/archive-aesthetic.md) — Kimi Archive & Knolling system: Swiss grids, diffuse softbox lighting, museum curation.
+- [`references/design-engineering-qa.md`](references/design-engineering-qa.md) — CSS `z-index` stacking context matrix, zero-CLS layout stability, GPU compositing checks.
+- [`references/github-highstar-ecosystem.md`](references/github-highstar-ecosystem.md) — Architectural deep-dive into shadcn/ui, Magic UI, Aceternity, and cmdk.
 
 ---
 
-### 💻 Quick Code Snippet: Double-Layer Magnetic Button
+### Quick Code Snippet: Double-Layer Magnetic Button
 
 ```tsx
 import React, { useRef, useState } from "react";
@@ -352,7 +352,7 @@ export function MagneticButton({ children, className = "" }: { children: React.R
 ---
 
 <a name="credits"></a>
-## 🤝 致谢与灵感来源 (Credits & Inspirations)
+## 致谢与灵感来源 (Credits & Inspirations) (Credits & Inspirations)
 
 本项目深受以下顶尖创作者与开源先锋的深刻启发：
 
@@ -367,6 +367,6 @@ export function MagneticButton({ children, className = "" }: { children: React.R
 
 ---
 
-## 📄 开源许可证 (License)
+## 开源许可证 (License) (License)
 
 本项目采用 [MIT License](LICENSE) 开源。欢迎 Star、Fork、提 PR 或在社区中自由分享！

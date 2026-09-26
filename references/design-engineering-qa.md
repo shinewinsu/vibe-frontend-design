@@ -68,9 +68,9 @@
 ### 3.1 杜绝 Layout Thrashing（强制同步布局）
 - **禁止在动画或高频滚动事件中交替读取与修改 DOM 几何属性**（如循环调用 `offsetWidth`、`scrollHeight`、`getComputedStyle()`）；
 - **动画属性只允许两兄弟**：
-  - ✅ **`transform`** (`translate3d`, `scale`, `rotate`)
-  - ✅ **`opacity`**
-- ❌ **严禁动画属性**：`width`, `height`, `top`, `left`, `margin`, `padding`（会触发全页面重排 Reflow）。
+  - [OK] **`transform`** (`translate3d`, `scale`, `rotate`)
+  - [OK] **`opacity`**
+- [X] **严禁动画属性**：`width`, `height`, `top`, `left`, `margin`, `padding`（会触发全页面重排 Reflow）。
 
 ---
 

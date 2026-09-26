@@ -101,7 +101,7 @@
   <!-- ================= CARD 4: WIDE FEATURE (2x1) ================= -->
   <g transform="translate(540, 268)">
     <rect width="316" height="108" rx="16" fill="url(#card-grad)" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
-    <text x="20" y="30" fill="#A1A1AA" font-size="13" class="sans" font-weight="600">🧲 磁吸物理与弹簧阻尼</text>
+    <text x="20" y="30" fill="#A1A1AA" font-size="13" class="sans" font-weight="600"> 磁吸物理与弹簧阻尼</text>
     <text x="20" y="52" fill="#71717A" font-size="11" class="sans">双层视差拉扯 · 触屏自动平滑降级</text>
 
     <!-- Code pill -->

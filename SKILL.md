@@ -20,14 +20,14 @@ description: 顶级前端设计与交互工程全能 Skill。深度融合 Adrian
 
 ### 专项深入模块手册 (Modular Reference Manuals)
 当需要查阅完整参数、底层数学模型与真实代码实现时，随时读取本 Skill 对应的专项手册：
-- 📖 [**视觉词典全书 (Visual Dictionary)**](references/visual-dictionary.md)：全套布局卡片、结构流、5大风格与设计令牌。
-- 🎬 [**动效与物理全书 (Motion Dictionary)**](references/motion-dictionary.md)：四层动效法则、多层视差、磁吸按钮物理、FLIP 重排。
-- 💻 [**生产级工业代码配方库 (Code Recipes)**](references/code-recipes.md)：12 套即插即用 React + Tailwind + Framer Motion 生产代码（磁吸、聚光灯、3D 卡片、光束边框、解密文字等）。
-- ⭐ [**GitHub 高星前端生态全景 (High-Star Ecosystem)**](references/github-highstar-ecosystem.md)：shadcn/ui、Magic UI、Aceternity UI、React Bits (48k★)、ibelick、vaul、sonner、cmdk 底层架构与公式。
-- 📝 [**提示词任务书模版库 (Prompt Cookbook)**](references/prompt-cookbook.md)：八字段任务书框架与全行业实战 Prompt。
-- 🀄 [**中文字体与现代排版指南 (Chinese Typography)**](references/chinese-typography.md)：中文字阶黄金律、中西文盘古中间隙、大标题负字距与标点避头尾。
-- 🏛️ [**档案美学与平铺静物体系 (Archive Aesthetic & Knolling)**](references/archive-aesthetic.md)：瑞士国际排版、正交坐标系、漫反射柔光、标本元件化。
-- 🛠️ [**设计工程自动化走查与排错 (Design Engineering QA)**](references/design-engineering-qa.md)：CSS z-index 层叠上下文排查、CLS=0 布局防抖、GPU 硬件加速与跨端走查。
+- [**视觉词典全书 (Visual Dictionary)**](references/visual-dictionary.md)：全套布局卡片、结构流、5大风格与设计令牌。
+- [**动效与物理全书 (Motion Dictionary)**](references/motion-dictionary.md)：四层动效法则、多层视差、磁吸按钮物理、FLIP 重排。
+- [**生产级工业代码配方库 (Code Recipes)**](references/code-recipes.md)：12 套即插即用 React + Tailwind + Framer Motion 生产代码（磁吸、聚光灯、3D 卡片、光束边框、解密文字等）。
+- [**GitHub 高星前端生态全景 (High-Star Ecosystem)**](references/github-highstar-ecosystem.md)：shadcn/ui、Magic UI、Aceternity UI、React Bits (48k stars)、ibelick、vaul、sonner、cmdk 底层架构与公式。
+- [**提示词任务书模版库 (Prompt Cookbook)**](references/prompt-cookbook.md)：八字段任务书框架与全行业实战 Prompt。
+- [**中文字体与现代排版指南 (Chinese Typography)**](references/chinese-typography.md)：中文字阶黄金律、中西文盘古中间隙、大标题负字距与标点避头尾。
+- [**档案美学与平铺静物体系 (Archive Aesthetic & Knolling)**](references/archive-aesthetic.md)：瑞士国际排版、正交坐标系、漫反射柔光、标本元件化。
+- [**设计工程自动化走查与排错 (Design Engineering QA)**](references/design-engineering-qa.md)：CSS z-index 层叠上下文排查、CLS=0 布局防抖、GPU 硬件加速与跨端走查。
 
 ---
 
@@ -66,16 +66,16 @@ description: 顶级前端设计与交互工程全能 Skill。深度融合 Adrian
 
 ### 0.C Anti-Slop（防 AI 模板化死刑清单）
 **严禁出现以下 10 种典型的“AI 偷懒套话式设计”**：
-1. ❌ **严禁千篇一律的 AI 紫色/蓝粉放射渐变发光球（Mesh Gradient Blobs）**。
-2. ❌ **严禁无脑的三等分对称卡片阵列（3-Column Feature Cards）**，强制采用 Bento Grid 或 5:7 / 8:4 不对称比例。
-3. ❌ **严禁深色模式直接使用纯黑（#000000）配纯白（#ffffff）文字**，必须使用带色温的炭黑底色（如 `#090a0f`, `#0d0e12`）与多层灰色文字（`text-zinc-100`, `text-zinc-400`）。
-4. ❌ **严禁所有元素无脑应用 Glassmorphism（毛玻璃）**，毛玻璃只能用于浮动导航或悬浮卡片，不可全屏糊满。
-5. ❌ **严禁所有元素以相同的节奏、方向和速度同时淡入**，必须有先导（Lead）与交错级联（Stagger，50-80ms 递进）。
-6. ❌ **严禁按钮点击时没有任何物理下按反馈（Missing Active State）**，必须支持 `active:scale-[0.98]`。
-7. ❌ **严禁页面出现水平横向滚动条（Horizontal Overflow）**。
-8. ❌ **严禁使用未调整字距（Letter-spacing）的大标题**，现代无衬线大标题必须设置负字距（`tracking-tight`，`-0.02em` 至 `-0.03em`）。
-9. ❌ **严禁无反馈的空白加载态**，必须有骨架屏（带 Shimmer 高光波纹）或状态保持。
-10. ❌ **严禁假装有动效却忽略 `prefers-reduced-motion`**。
+1. [X] **严禁千篇一律的 AI 紫色/蓝粉放射渐变发光球（Mesh Gradient Blobs）**。
+2. [X] **严禁无脑的三等分对称卡片阵列（3-Column Feature Cards）**，强制采用 Bento Grid 或 5:7 / 8:4 不对称比例。
+3. [X] **严禁深色模式直接使用纯黑（#000000）配纯白（#ffffff）文字**，必须使用带色温的炭黑底色（如 `#090a0f`, `#0d0e12`）与多层灰色文字（`text-zinc-100`, `text-zinc-400`）。
+4. [X] **严禁所有元素无脑应用 Glassmorphism（毛玻璃）**，毛玻璃只能用于浮动导航或悬浮卡片，不可全屏糊满。
+5. [X] **严禁所有元素以相同的节奏、方向和速度同时淡入**，必须有先导（Lead）与交错级联（Stagger，50-80ms 递进）。
+6. [X] **严禁按钮点击时没有任何物理下按反馈（Missing Active State）**，必须支持 `active:scale-[0.98]`。
+7. [X] **严禁页面出现水平横向滚动条（Horizontal Overflow）**。
+8. [X] **严禁使用未调整字距（Letter-spacing）的大标题**，现代无衬线大标题必须设置负字距（`tracking-tight`，`-0.02em` 至 `-0.03em`）。
+9. [X] **严禁无反馈的空白加载态**，必须有骨架屏（带 Shimmer 高光波纹）或状态保持。
+10. [X] **严禁假装有动效却忽略 `prefers-reduced-motion`**。
 
 ---
 
@@ -129,7 +129,7 @@ description: 顶级前端设计与交互工程全能 Skill。深度融合 Adrian
   - 核心属性：激活标签底部跟随一个物理滑动的胶囊背景或指示横条，使用 Framer Motion 的 `layoutId="active-tab"` 实现无缝位移，绝对不用瞬间闪烁切换。
 - **Slide-over Drawer（抽屉式侧滑面板）**：
   - 移动端导航与复杂详情检查的核心容器，右侧/底部带回弹物理滑入，伴随半透明暗色遮罩（Backdrop Fade）。
-- **Command Palette（⌘K 全局搜索与指令面板）**：
+- **Command Palette（CmdK 全局搜索与指令面板）**：
   - 居中悬浮、高斯模糊遮罩、键盘上下键焦点导航、分类 Group（常用功能、跳转、帮助）、回车即刻执行。
 
 ---
@@ -363,15 +363,15 @@ description: 顶级前端设计与交互工程全能 Skill。深度融合 Adrian
 
 | 校验维度 | 检查项 | 验收标准 | 违规现象 / 修复建议 |
 |---|---|---|---|
-| **排版与层次** | 标题字距 (Tracking) | 大标题设置负字距（`-0.02em`） | 大标题字间距散漫松垮 ➔ 加 `tracking-tight` |
-| **排版与层次** | 行长约束 (Measure) | 正文单行宽度在 60-75ch 之间 | 一行字从屏幕最左跨到最右 ➔ 加 `max-w-prose` |
-| **色彩与光影** | 表面对比度 (Contrast) | 关键文本对比度符合 WCAG AA ($\ge 4.5:1$) | 暗色底上灰色字看不清 ➔ 调亮中性色阶 |
-| **色彩与光影** | 表面层次 (Surfaces) | 区分底色、卡片面色、浮层色 | 页面一片死平 ➔ 引入 Level 0/1/2 分层 |
-| **交互与手感** | 点击反馈 (Press State) | 按钮具备 active 物理缩放 | 点击毫无反应 ➔ 加 `active:scale-[0.98]` |
-| **交互与手感** | 键盘聚焦 (Focus Ring) | 键盘导航具备可见高亮轮廓 | 无障碍审查报错 ➔ 加 `focus-visible:ring-2` |
-| **动效与过渡** | 节奏级联 (Stagger) | 列表/卡片错峰递进出现 | 所有卡片同一瞬间生硬闪现 ➔ 加 50ms 级联 |
-| **动效与过渡** | 缓动曲线 (Easing) | 采用物理弹簧或顺滑减速曲线 | 机械匀速线性运动 ➔ 改用 `cubic-bezier(0.16,1,0.3,1)` |
-| **无障碍防线** | 动效减弱偏好 | 适配 `prefers-reduced-motion` | 晕动症用户抗议 ➔ 在媒体查询中将位移动画降级为淡入 |
-| **移动端适配** | 触摸热区 (Touch Target)| 按钮与链接可点击区域 $\ge 44\times 44\text{px}$ | 手机上按不到 ➔ 增加内边距 `p-3` |
-| **移动端适配** | 溢出检测 (No Overflow)| 任何视口下均无水平横向滚动条 | 页面左右晃荡 ➔ 检查绝对定位或负 margin 元素 |
-| **状态闭环** | 异常与骨架屏覆盖 | 拥有完整 Loading / Empty / Error 态 | 数据加载时页面白屏或跳动 ➔ 加 Shimmer 骨架屏 |
+| **排版与层次** | 标题字距 (Tracking) | 大标题设置负字距（`-0.02em`） | 大标题字间距散漫松垮 -> 加 `tracking-tight` |
+| **排版与层次** | 行长约束 (Measure) | 正文单行宽度在 60-75ch 之间 | 一行字从屏幕最左跨到最右 -> 加 `max-w-prose` |
+| **色彩与光影** | 表面对比度 (Contrast) | 关键文本对比度符合 WCAG AA ($\ge 4.5:1$) | 暗色底上灰色字看不清 -> 调亮中性色阶 |
+| **色彩与光影** | 表面层次 (Surfaces) | 区分底色、卡片面色、浮层色 | 页面一片死平 -> 引入 Level 0/1/2 分层 |
+| **交互与手感** | 点击反馈 (Press State) | 按钮具备 active 物理缩放 | 点击毫无反应 -> 加 `active:scale-[0.98]` |
+| **交互与手感** | 键盘聚焦 (Focus Ring) | 键盘导航具备可见高亮轮廓 | 无障碍审查报错 -> 加 `focus-visible:ring-2` |
+| **动效与过渡** | 节奏级联 (Stagger) | 列表/卡片错峰递进出现 | 所有卡片同一瞬间生硬闪现 -> 加 50ms 级联 |
+| **动效与过渡** | 缓动曲线 (Easing) | 采用物理弹簧或顺滑减速曲线 | 机械匀速线性运动 -> 改用 `cubic-bezier(0.16,1,0.3,1)` |
+| **无障碍防线** | 动效减弱偏好 | 适配 `prefers-reduced-motion` | 晕动症用户抗议 -> 在媒体查询中将位移动画降级为淡入 |
+| **移动端适配** | 触摸热区 (Touch Target)| 按钮与链接可点击区域 $\ge 44\times 44\text{px}$ | 手机上按不到 -> 增加内边距 `p-3` |
+| **移动端适配** | 溢出检测 (No Overflow)| 任何视口下均无水平横向滚动条 | 页面左右晃荡 -> 检查绝对定位或负 margin 元素 |
+| **状态闭环** | 异常与骨架屏覆盖 | 拥有完整 Loading / Empty / Error 态 | 数据加载时页面白屏或跳动 -> 加 Shimmer 骨架屏 |

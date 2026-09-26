@@ -117,7 +117,7 @@
         <motion.div style={{ y: yBackground }} className="absolute inset-0 bg-grid-pattern opacity-20 will-change-transform" />
         <div className="relative z-10 max-w-4xl mx-auto pt-32">...</div>
         <motion.div style={{ y: yForeground }} className="absolute top-1/2 right-10 p-4 rounded-xl glass-card will-change-transform">
-          ⚡ 99.9% Uptime
+           99.9% Uptime
         </motion.div>
       </section>
     );
@@ -238,12 +238,12 @@ export function SpotlightCard({ children, className = "" }: { children: React.Re
 
 ### 6.1 Origin-Aware Modal Transitions（原点感知弹窗）
 - 依据 Emil Kowalski 的原则：弹窗或菜单应从**触发它的按钮位置**开始展开，而不是无缘无故从屏幕中心炸开。
-- 进场：`scale: 0.95 ➔ 1.0` + `opacity: 0 ➔ 1`（200ms ease-out）；
-- 退场：`scale: 1.0 ➔ 0.97` + `opacity: 1 ➔ 0`（140ms ease-in）；
+- 进场：`scale: 0.95 -> 1.0` + `opacity: 0 -> 1`（200ms ease-out）；
+- 退场：`scale: 1.0 -> 0.97` + `opacity: 1 -> 0`（140ms ease-in）；
 - 背景蒙层：`backdrop-filter: blur(8px) brightness(60%)` 伴随同步淡入淡出。
 
 ### 6.2 Morphing State Button（变形状态按钮）
-- 点击提交后，按钮保持原中心点不变，左右两端向中心收缩变成一个直径等于原高度的圆（如 `h-10 w-36 ➔ h-10 w-10`），同时文字渐隐，中心浮现 16px 圆形 Spinner。
+- 点击提交后，按钮保持原中心点不变，左右两端向中心收缩变成一个直径等于原高度的圆（如 `h-10 w-36 -> h-10 w-10`），同时文字渐隐，中心浮现 16px 圆形 Spinner。
 - 异步完成后，Spinner 演变为打勾图标（Checkmark），背景变为墨绿色，保持 1.2 秒后平滑展开复原。
 
 ---

@@ -1,7 +1,7 @@
 # GitHub 高星前端工程与组件生态全景图谱 (GitHub High-Star Frontend Ecosystem)
 
 > 本图谱系统汇聚了 GitHub 上星标最高、在顶级 AI 编程社区与设计工程圈（Design Engineering）中被封为神作的顶尖开源项目：  
-> **shadcn/ui (75k★), React Bits (48k★), Aceternity UI (18k★), Magic UI (16k★), Lucide (14k★), cmdk (10k★), ibelick ui-skills (9k★), sonner (9k★), vaul (7k★), Lenis (7k★)**。  
+> **shadcn/ui (75k stars), React Bits (48k stars), Aceternity UI (18k stars), Magic UI (16k stars), Lucide (14k stars), cmdk (10k stars), ibelick ui-skills (9k stars), sonner (9k stars), vaul (7k stars), Lenis (7k stars)**。  
 > 深入拆解其**底层架构、数学公式、变体系统、着色器/Canvas 原理与工业级生产代码**，与 Adrian Punk 视觉/动效词典无缝融合。
 
 ---
@@ -10,7 +10,7 @@
 1. [基石架构层：shadcn/ui + Radix + CVA 工业级规范](#1-基石架构层shadcnui--radix--cva-工业级规范)
 2. [动效视觉顶流：Magic UI 核心组件与算法解密](#2-动效视觉顶流magic-ui-核心组件与算法解密)
 3. [三维与视觉核武器：Aceternity UI 杀手级组件](#3-三维与视觉核武器aceternity-ui-杀手级组件)
-4. [创意交互宝库：React Bits 48k★ 动效精粹](#4-创意交互宝库react-bits-48k-动效精粹)
+4. [创意交互宝库：React Bits 48k stars 动效精粹](#4-创意交互宝库react-bits-48k-动效精粹)
 5. [微交互手艺巅峰：Emil & Paco 原生手感四件套 (cmdk, sonner, vaul, lenis)](#5-微交互手艺巅峰emil--paco-原生手感四件套-cmdk-sonner-vaul-lenis)
 6. [质感底纹与噪点美学：ibelick Background Snippets](#6-质感底纹与噪点美学ibelick-background-snippets)
 
@@ -205,7 +205,7 @@ export const CardItem = ({
 
 ---
 
-## 4. 创意交互宝库：React Bits 48k★ 动效精粹
+## 4. 创意交互宝库：React Bits 48k stars 动效精粹
 
 ### 4.1 Decrypted / Scramble Text（黑客黑幕字符解密乱码动画）
 - 文本在进入视口或悬停时，字符以高频随机字符（`!@#$%^&*`）疯狂翻滚刷新，并在几百毫秒内由左向右依次“解密锚定”为真实文字，极具赛博极客感。
@@ -217,23 +217,23 @@ export const CardItem = ({
 
 ## 5. 微交互手艺巅峰：Emil & Paco 原生手感四件套
 
-### 5.1 `cmdk` (Paco Coursey, 10k★)
+### 5.1 `cmdk` (Paco Coursey, 10k stars)
 - 全网最快、无样式、完全符合 WAI-ARIA 无障碍规范的 Command Palette 快捷键搜索菜单。
 - 零延迟过滤、自动分组、记忆最近搜索、纯键盘方向键丝滑切换。
 
-### 5.2 `sonner` (Emil Kowalski, 9k★)
+### 5.2 `sonner` (Emil Kowalski, 9k stars)
 - 意见领袖级 Toast 通知组件：
   - **堆叠景深**：多条通知时自动产生卡片 3D 折叠；
   - **悬停展开**：鼠标移入时多条卡片自动纵向平滑展开；
   - **手势轻扫**：移动端支持顺滑拖拽消除（Drag-to-dismiss）。
 
-### 5.3 `vaul` (Emil Kowalski, 7k★)
+### 5.3 `vaul` (Emil Kowalski, 7k stars)
 - 移动端原生手感的 Drawer 抽屉组件：
   - 基于物理阻尼的随手拖动跟踪；
   - 智能判断拖动速度（Velocity），快速下拉时自动触发关闭，慢速拖动根据吸附点（Snap Points）智能滞留；
   - 打开抽屉时将背后的整个页面按比例缩小（`scale: 0.95`）并增加圆角，带来 iOS 原生级别的沉浸感。
 
-### 5.4 `lenis` (Studio Freight / Darkroom, 7k★)
+### 5.4 `lenis` (Studio Freight / Darkroom, 7k stars)
 - 现代网页平滑滚动标准：
   - 彻底抛弃过去破坏原生滚动的低劣模拟滚动；
   - 保持浏览器原生滚动条与键盘 PageUp/Down 响应，仅通过 RequestAnimationFrame 插值标准化（Normalization）滚轮物理，彻底消灭滚轮卡顿。

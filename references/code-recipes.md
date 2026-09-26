@@ -283,7 +283,7 @@ export function ParallaxHero() {
         style={{ y: fgY }}
         className="pointer-events-none absolute bottom-20 right-10 lg:right-24 rounded-2xl bg-zinc-900/80 p-4 border border-white/10 shadow-2xl backdrop-blur-md will-change-transform"
       >
-        <span className="text-xs font-mono text-emerald-400">● 1,219 Verified Tests Passing</span>
+        <span className="text-xs font-mono text-emerald-400">[Verified] 1,219 Verified Tests Passing</span>
       </motion.div>
     </div>
   );

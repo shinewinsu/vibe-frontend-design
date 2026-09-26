@@ -77,7 +77,7 @@
 
 ## 2. 页面纵向结构骨架 (Page Architecture & Flow)
 
-顶级 Landing Page 严格遵循心智转化动线（Attention ➔ Interest ➔ Trust ➔ Action）：
+顶级 Landing Page 严格遵循心智转化动线（Attention -> Interest -> Trust -> Action）：
 
 ### 2.1 Hero Section（主视觉首屏）
 - **构成要素**：
@@ -119,7 +119,7 @@
 - **核心机制**：激活项的底部线条或胶囊背景不是生硬的高亮切换，而是随着用户点击平滑滑动至新位置。
 - **推荐实现**：Framer Motion `layoutId="active-indicator"` 或基于 DOM `getBoundingClientRect()` 计算 `transform: translateX() scaleX()`。
 
-### 3.3 Command Palette（⌘K 全局快捷指令面板）
+### 3.3 Command Palette（CmdK 全局快捷指令面板）
 - **灵感源**：Linear, Raycast, Vercel。
 - **交互规范**：
   - 任意页面按下 `Cmd + K` 或 `Ctrl + K` 唤出；
@@ -131,8 +131,8 @@
 ## 4. 核心交互组件精解 (Interactive UI Components)
 
 ### 4.1 Modal & Popover（模态对话框与浮层）
-- **进入动画**：原点缩放扩散（`scale: 0.96 ➔ 1.0`, `opacity: 0 ➔ 1`），耗时 180ms，减速缓动。
-- **退出动画**：`scale: 1.0 ➔ 0.98`, `opacity: 1 ➔ 0`，耗时 120ms（退出必须快于进入）。
+- **进入动画**：原点缩放扩散（`scale: 0.96 -> 1.0`, `opacity: 0 -> 1`），耗时 180ms，减速缓动。
+- **退出动画**：`scale: 1.0 -> 0.98`, `opacity: 1 -> 0`，耗时 120ms（退出必须快于进入）。
 - **层级焦点锁**：打开时页面禁止背景滚动（`overflow: hidden`），焦点自动捕获在弹窗内。
 
 ### 4.2 Stacked Toasts（堆叠式通知系统）
