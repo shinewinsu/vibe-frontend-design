@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="100%" height="400" fill="none">
+  <defs>
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif; }
+
+      @keyframes beamTravel {
+        0% { stroke-dashoffset: 400; }
+        100% { stroke-dashoffset: 0; }
+      }
+      .beam-line {
+        stroke-dasharray: 80 320;
+        animation: beamTravel 4s linear infinite;
+      }
+
+      @keyframes greenPulse {
+        0%, 100% { opacity: 0.4; }
+        50% { opacity: 1; filter: drop-shadow(0 0 6px #10B981); }
+      }
+      .green-dot { animation: greenPulse 2s ease-in-out infinite; }
+    </style>
+
+    <!-- Card Background Gradient -->
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14151D" />
+      <stop offset="100%" stop-color="#0E0F14" />
+    </linearGradient>
+
+    <!-- Hero Card Spotlight Glow -->
+    <radialGradient id="hero-spotlight" cx="30%" cy="20%" r="80%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Container Base -->
+  <rect width="880" height="400" rx="16" fill="#090A0F" />
+
+  <!-- ================= CARD 1: HERO ANCHOR TILE (2x2) ================= -->
+  <g transform="translate(24, 24)">
+    <rect width="500" height="352" rx="16" fill="url(#card-grad)" stroke="rgba(255,255,255,0.12)" stroke-width="1" />
+    <rect width="500" height="352" rx="16" fill="url(#hero-spotlight)" />
+
+    <!-- Label -->
+    <text x="24" y="38" fill="#60A5FA" font-size="11" class="mono" font-weight="600" letter-spacing="1">01 / HERO ANCHOR TILE (2x2)</text>
+    <text x="24" y="68" fill="#FFFFFF" font-size="22" class="sans" font-weight="700" letter-spacing="-0.5">分布式智能拓扑与数据流</text>
+    <text x="24" y="92" fill="#71717A" font-size="13" class="sans">核心可视化展示区 · 带有动态数据连线与交互节点</text>
+
+    <!-- Inner Interactive Canvas Simulation -->
+    <g transform="translate(24, 116)">
+      <rect width="452" height="212" rx="12" fill="#08090C" stroke="rgba(255,255,255,0.06)" />
+
+      <!-- Node Connections -->
+      <path d="M 60 106 Q 160 30 240 106 T 400 106" stroke="rgba(255,255,255,0.1)" stroke-width="2" fill="none" />
+      <!-- Animated Beam Flow -->
+      <path d="M 60 106 Q 160 30 240 106 T 400 106" stroke="#60A5FA" stroke-width="2" fill="none" class="beam-line" />
+
+      <!-- Node A -->
+      <circle cx="60" cy="106" r="22" fill="#181924" stroke="#3B82F6" stroke-width="1.5" />
+      <text x="60" y="110" fill="#93C5FD" font-size="10" class="mono" text-anchor="middle">INPUT</text>
+
+      <!-- Node B (Core) -->
+      <circle cx="240" cy="106" r="28" fill="#1E202E" stroke="#818CF8" stroke-width="2" />
+      <text x="240" y="102" fill="#FFFFFF" font-size="11" class="mono" font-weight="bold" text-anchor="middle">AGENT</text>
+      <text x="240" y="118" fill="#818CF8" font-size="9" class="mono" text-anchor="middle">DISPATCH</text>
+
+      <!-- Node C -->
+      <circle cx="400" cy="106" r="22" fill="#181924" stroke="#10B981" stroke-width="1.5" />
+      <text x="400" y="110" fill="#6EE7B7" font-size="10" class="mono" text-anchor="middle">STREAM</text>
+    </g>
+  </g>
+
+  <!-- ================= CARD 2: METRIC TILE 1 (1x1) ================= -->
+  <g transform="translate(540, 24)">
+    <rect width="316" height="106" rx="16" fill="url(#card-grad)" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+    <text x="20" y="32" fill="#71717A" font-size="11" class="mono" font-weight="600" letter-spacing="1">END-TO-END LATENCY</text>
+    <text x="20" y="74" fill="#FFFFFF" font-size="34" class="sans" font-weight="800" letter-spacing="-1">&lt; 8.2ms</text>
+
+    <!-- Status badge -->
+    <g transform="translate(200, 20)">
+      <rect width="96" height="22" rx="11" fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.3)" />
+      <circle cx="12" cy="11" r="3.5" fill="#10B981" class="green-dot" />
+      <text x="22" y="15" fill="#34D399" font-size="10" class="mono" font-weight="600">P99 PEAK</text>
+    </g>
+    <text x="20" y="94" fill="#34D399" font-size="11" class="sans">↑ 92% 优于传统全量 DOM 渲染</text>
+  </g>
+
+  <!-- ================= CARD 3: METRIC TILE 2 (1x1) ================= -->
+  <g transform="translate(540, 146)">
+    <rect width="316" height="106" rx="16" fill="url(#card-grad)" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+    <text x="20" y="32" fill="#71717A" font-size="11" class="mono" font-weight="600" letter-spacing="1">LAYOUT STABILITY</text>
+    <text x="20" y="74" fill="#FFFFFF" font-size="34" class="sans" font-weight="800" letter-spacing="-1">CLS = 0.00</text>
+
+    <g transform="translate(200, 20)">
+      <rect width="96" height="22" rx="11" fill="rgba(99,102,241,0.12)" stroke="rgba(99,102,241,0.3)" />
+      <text x="48" y="15" fill="#A5B4FC" font-size="10" class="mono" font-weight="600" text-anchor="middle">WCAG AAA</text>
+    </g>
+    <text x="20" y="94" fill="#818CF8" font-size="11" class="sans">1:1 轮廓高光骨架屏零抖动</text>
+  </g>
+
+  <!-- ================= CARD 4: WIDE FEATURE (2x1) ================= -->
+  <g transform="translate(540, 268)">
+    <rect width="316" height="108" rx="16" fill="url(#card-grad)" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+    <text x="20" y="30" fill="#A1A1AA" font-size="13" class="sans" font-weight="600">🧲 磁吸物理与弹簧阻尼</text>
+    <text x="20" y="52" fill="#71717A" font-size="11" class="sans">双层视差拉扯 · 触屏自动平滑降级</text>
+
+    <!-- Code pill -->
+    <rect x="20" y="66" width="276" height="28" rx="6" fill="#08090C" stroke="rgba(255,255,255,0.06)" />
+    <text x="32" y="84" fill="#93C5FD" font-size="11" class="mono">&lt;MagneticButton stiffness={180} /&gt;</text>
+  </g>
+</svg>

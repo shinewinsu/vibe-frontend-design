@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 260" width="100%" height="260" fill="none">
+  <defs>
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif; }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="880" height="260" rx="16" fill="#0A0B10" stroke="rgba(255,255,255,0.08)" />
+
+  <!-- Section Title -->
+  <g transform="translate(32, 28)">
+    <text x="0" y="16" fill="#60A5FA" font-size="11" class="mono" font-weight="600" letter-spacing="1">PHYSICS MODEL</text>
+    <text x="0" y="38" fill="#FFFFFF" font-size="18" class="sans" font-weight="700">双层视差磁吸按钮物理建模 (Magnetic Button Simulation)</text>
+  </g>
+
+  <!-- Left Illustration: Vector Field -->
+  <g transform="translate(40, 75)">
+    <!-- 1.5x Magnetic Influence Radius Ring -->
+    <rect x="20" y="15" width="340" height="130" rx="65" fill="rgba(59,130,246,0.03)" stroke="rgba(59,130,246,0.25)" stroke-dasharray="6 4" stroke-width="1.5" />
+    <text x="190" y="32" fill="#93C5FD" font-size="9" class="mono" text-anchor="middle">1.5x MAGNETIC INFLUENCE RADIUS (感应范围)</text>
+
+    <!-- Original Button Center Dot (Anchor) -->
+    <circle cx="190" cy="80" r="4" fill="#71717A" />
+    <text x="190" y="100" fill="#71717A" font-size="9" class="mono" text-anchor="middle">REST ANCHOR (0, 0)</text>
+
+    <!-- Displaced Button Body (14px offset) -->
+    <g transform="translate(202, 68)">
+      <rect width="180" height="48" rx="12" fill="#181926" stroke="#3B82F6" stroke-width="1.5" />
+      <!-- Inner Text (additional 10px parallax offset) -->
+      <g transform="translate(18, 0)">
+        <text x="70" y="28" fill="#FFFFFF" font-size="12" class="sans" font-weight="600" text-anchor="middle">体验磁吸牵引</text>
+        <path d="M 125 24 L 135 24 M 131 20 L 135 24 L 131 28" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round" />
+      </g>
+    </g>
+
+    <!-- Cursor Pointer & Pull Vector Arrow -->
+    <g transform="translate(350, 60)">
+      <!-- Arrow from Anchor to Cursor -->
+      <path d="M -160 20 L -10 0" stroke="#F43F5E" stroke-width="1.5" stroke-dasharray="3 3" />
+      <!-- Cursor Icon -->
+      <path d="M 0 0 L 0 16 L 4 12 L 8 18 L 10 17 L 6 11 L 11 11 Z" fill="#FFFFFF" stroke="#000000" stroke-width="1" />
+      <text x="16" y="14" fill="#F43F5E" font-size="10" class="mono" font-weight="bold">MOUSE CURSOR</text>
+    </g>
+  </g>
+
+  <!-- Right Side: Physics Formulas & Code Matrix -->
+  <g transform="translate(480, 75)">
+    <rect width="360" height="150" rx="12" fill="#060709" stroke="rgba(255,255,255,0.06)" />
+
+    <!-- Code block header -->
+    <rect width="360" height="28" rx="12" fill="#111218" />
+    <circle cx="16" cy="14" r="3.5" fill="#EF4444" />
+    <circle cx="28" cy="14" r="3.5" fill="#F59E0B" />
+    <circle cx="40" cy="14" r="3.5" fill="#10B981" />
+    <text x="60" y="18" fill="#71717A" font-size="10" class="mono">spring-parameters.ts</text>
+
+    <!-- Text content -->
+    <g transform="translate(16, 46)" class="mono" font-size="11">
+      <text y="0" fill="#93C5FD">// 1. 弹簧阻尼运动方程</text>
+      <text y="20" fill="#E4E4E7">F = -k · x - c · v  <tspan fill="#71717A">(Hooke's Law + Damping)</tspan></text>
+      <text y="44" fill="#93C5FD">// 2. Framer Motion 物理配置</text>
+      <text y="64" fill="#F472B6">transition: {</text>
+      <text y="80" fill="#E4E4E7">  type: <tspan fill="#A7F3D0">"spring"</tspan>, stiffness: <tspan fill="#FCD34D">180</tspan>, damping: <tspan fill="#FCD34D">14</tspan></text>
+      <text y="96" fill="#F472B6">}</text>
+    </g>
+  </g>
+</svg>

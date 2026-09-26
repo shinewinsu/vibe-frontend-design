@@ -1,9 +1,8 @@
+<p align="center">
+  <img src="assets/hero-banner.svg" alt="vibe-frontend-design - The Anti-Slop Design Engineering Skill" width="100%" />
+</p>
+
 <div align="center">
-
-# 🎨⚡ vibe-frontend-design
-
-**The Anti-Slop Design Engineering Skill for AI Coding Agents**  
-*把模糊的审美感觉，转化为 AI 与浏览器能 100% 精确执行的确定性工程资产。*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Compatible-8A2BE2.svg?style=flat-square)](https://github.com/anthropics/claude-code)
@@ -46,6 +45,10 @@
 | **中文字体** | 默认行高拥挤，大标题字间距散漫，标点掉行首 | **1.25 中文字阶黄金律**，大标题负字距（`-0.02em`），中西文盘古之白，标点避头尾 |
 | **加载性能** | 全屏突兀白屏，数据返回瞬间布局剧烈抖动 | **1:1 轮廓高光波纹骨架屏（Shimmer）**，纯 CSS 高度自适应手风琴，**CLS = 0** |
 
+<p align="center">
+  <img src="assets/before-after.svg" alt="Before vs After Visual Comparison" width="100%" />
+</p>
+
 ---
 
 ### 🕹️ 零安装真实交互效果演示 (Live Interactive Demo)
@@ -78,6 +81,10 @@
 │ └───────────────────────────────────┴────────────────────────────────┘ │
 └────────────────────────────────────────────────────────────────────────┘
 ```
+
+<p align="center">
+  <img src="assets/bento-showcase.svg" alt="Bento Grid Animated Showcase" width="100%" />
+</p>
 
 ---
 
@@ -143,6 +150,10 @@ export function MagneticButton({ children, className = "" }: { children: React.R
   );
 }
 ```
+
+<p align="center">
+  <img src="assets/magnetic-spring.svg" alt="Magnetic Button Physics Simulation" width="100%" />
+</p>
 
 #### 2. 纯 CSS 零重排高度自适应手风琴 (Zero Layout Thrashing Accordion)
 > 彻底告别 JS 测量 `scrollHeight` 导致的页面重排掉帧，基于现代 CSS Grid 实现 60fps 丝滑展开：
@@ -277,6 +288,10 @@ The repository includes a standalone interactive showcase page (`demo/index.html
   - ⚡ **Decrypted / Scramble Text**: Cyberpunk character rolling on hover.
   - 🪟 **Pure CSS Zero-Layout-Thrashing Accordion**: 60fps smooth grid expansion without JS `scrollHeight` reflows.
   - ⏱️ **Shimmer Skeleton Screen**: 1:1 blueprint outline with zero CLS.
+
+<p align="center">
+  <img src="assets/bento-showcase.svg" alt="Bento Grid Showcase" width="100%" />
+</p>
 
 ---
 
